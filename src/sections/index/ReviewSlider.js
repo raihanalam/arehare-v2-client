@@ -7,7 +7,7 @@ const reviews = [
   {
     name: 'Kay Kim, Co-Founder',
     company: 'Rooted',
-    quote: "It's extremely exciting that Fiverr has freelancers from all over the world — it broadens the talent pool. One of the best things about Fiverr is that while we're sleeping, someone's working.",
+    quote: "It's extremely exciting that Arehare has freelancers from all over the world — it broadens the talent pool. One of the best things about Arehare is that while we're sleeping, someone's working.",
     imageSrc: 'assets/images/products/service-7.jpg', // replace with actual image URL
   },
   {
@@ -58,7 +58,7 @@ const ReviewSlider = () => {
         {/* Right Side: Text */}
         <CardContent sx={{ width: '60%', padding: '2rem', textAlign:'justify' }}>
           <Typography
-            variant="h3"
+            variant="h4"
             component="div"
             gutterBottom
             sx={{ fontFamily: '"Times New Roman", Times, serif', fontStyle: 'italic' }}

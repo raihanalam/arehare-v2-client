@@ -16,7 +16,7 @@ export default function ServiceSection() {
 
      useEffect(() => {
           if (PRODUCTS) {
-               setProducts(PRODUCTS.slice(0, 12));
+               setProducts(PRODUCTS.slice(0, 8));
           }
      }, [PRODUCTS]);
 
@@ -34,10 +34,19 @@ export default function ServiceSection() {
 
 
 
-               <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="space-between" sx={{ mb: 5 , mt:10}}>
-                    <Typography variant="h3" >
-                         Top Talented Freelancers
-                    </Typography>
+               <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="space-between" sx={{ mb: 5, mt: 5 }}>
+                    <div style={{ textAlign: "left" }}>
+                         <Typography
+                              variant="h4"
+                              sx={{ fontWeight: "bold", mb: 1, display: "inline-block" }}
+                         >
+                               Featured Services
+                         </Typography>
+
+                         <Typography variant="body1" sx={{ color: "text.secondary", mb: 3 }}>
+                              Explore the most demandig services
+                         </Typography>
+                    </div>
 
                     <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
 

@@ -9,6 +9,8 @@ import BuilderSection from '../sections/index/BuilderSection';
 import ReviewSlider from '../sections/index/ReviewSlider';
 import BlogSection from '../sections/index/BlogSection';
 import Footer from '@/sections/index/FooterSection';
+import LatestProjectsSection from '@/sections/projects/LatestProjectsSection';
+import TopRatedFreelancers from '@/sections/index/TopRatedFreelancers'
 // ----------------------------------------------------------------------
 
 // Main HomePage Component
@@ -24,11 +26,12 @@ export default function HomePage() {
                <Navbar />
                <HeroSection />
                <SolutionsSection />
-               <BuilderSection/>
                <ServiceSection />
+               <TopRatedFreelancers/>
                <HoverCardComponent/>
+               <LatestProjectsSection />;
                <ReviewSlider/>
-               
+               <BuilderSection/>
                <BlogSection />
                <Footer/>
           </>

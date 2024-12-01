@@ -47,7 +47,7 @@ const products = [...Array(24)].map((_, index) => {
     price: parseFloat(faker.finance.amount(4, 99, 2)), // Generate a price as a string and convert to float
     priceSale: setIndex % 3 ? null : parseFloat(faker.finance.amount(19, 29, 2)), // Same here
    
-    status: sample(['Pro', 'Nob', '', '']),
+    status: sample(['Featured', 'Top Seller', '', '']),
   };
 });
 

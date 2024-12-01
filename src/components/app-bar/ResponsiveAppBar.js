@@ -25,7 +25,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CloseIcon from '@mui/icons-material/Close';
 
-const navItems = [{ label: 'Home', path: '/' }, { label: 'Services', path: '/services' }, { label: 'About', path: '/about' }, { label: 'Contact', path: '/contact' }, { label: 'Blog', path: '/blog' }];
+const navItems = [{ label: 'Home', path: '/' }, { label: 'Services', path: '/services' }, {label: 'Businesses', path: '/Businesses' }, { label: 'About', path: '/about' }, { label: 'Contact', path: '/contact' }, { label: 'Blog', path: '/blog' }];
 const settings = [{ label: 'Profile', path: '/profile' }, { label: 'Dashboard', path: '/dashboard' }, { label: 'Settings', path: '/settings' }, { label: 'Logout', path: '/logout' }];
 
 const ResponsiveAppBar = (props) => {
@@ -41,8 +41,6 @@ const ResponsiveAppBar = (props) => {
           }
           else {
                setMobileOpen((prevState) => !prevState);
-
-
           }
      };
 
@@ -58,7 +56,7 @@ const ResponsiveAppBar = (props) => {
      useEffect(() => {
           const handleScroll = () => {
                if (window.scrollY > window.innerHeight) {
-                    setAppBarBg('black'); // Set your minimal background color here
+                    setAppBarBg('white'); // Set your minimal background color here
                } else {
                     setAppBarBg('transparent');
                }
@@ -72,7 +70,7 @@ const ResponsiveAppBar = (props) => {
 
      const drawer = (
           <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-               <IconButton onClick={handleDrawerToggle} sx={{ mx: 'auto', my: 2 }}>
+               <IconButton onClick={handleDrawerToggle} sx={{ mx: 'auto', my: 2, height: '25px' }}>
                     <CloseIcon />
                </IconButton>
                <Divider />
@@ -82,7 +80,7 @@ const ResponsiveAppBar = (props) => {
                               <Link href={item.path} passHref legacyBehavior>
                                    <ListItemButton sx={{ textAlign: 'center' }}>
                                         <ListItemText primary={item.label} />
-                                   </ListItemButton>
+                                   </ListItemButton> 
                               </Link>
                          </ListItem>
                     ))}
@@ -97,14 +95,14 @@ const ResponsiveAppBar = (props) => {
                          </Tooltip>
                     ) : (
                          <>
-                              <Link href="/login" passHref>
-                                   <Button variant="outlined" sx={{ my: 1 }}>
-                                        Sign In
+                              <Link href="/login" passHref >
+                                   <Button variant="outlined" sx={{ my: 1, mr: 2}}>
+                                        Signin
                                    </Button>
                               </Link>
                               <Link href="/signup" passHref>
                                    <Button variant="contained" sx={{ my: 1 }}>
-                                        Sign Up
+                                        Signup
                                    </Button>
                               </Link>
                          </>
@@ -118,17 +116,18 @@ const ResponsiveAppBar = (props) => {
                <Container maxWidth="xl">
                     <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                          <Typography
-                              variant="h4"
+                              variant="h3"
                               noWrap
                               component="a"
                               href="/"
                               sx={{
                                    mr: 2,
-                                   fontFamily: 'monospace',
+                                   // fontFamily: 'monospace',
                                    fontWeight: 700,
                                    letterSpacing: '.3rem',
                                    color: 'inherit',
                                    textDecoration: 'none',
+                                   color:'#444444'
                               }}
                          >
                               AreHare
@@ -137,7 +136,7 @@ const ResponsiveAppBar = (props) => {
                          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
                               {navItems.map((page) => (
                                    <Link href={page.path} passHref key={page.label} legacyBehavior>
-                                        <Button sx={{ my: 2, color: 'white', display: 'block' }}>
+                                        <Button sx={{ my: 2, color: '#444444', display: 'block' }}>
                                              {page.label}
                                         </Button>
                                    </Link>
@@ -208,12 +207,12 @@ const ResponsiveAppBar = (props) => {
                                    <>
                                         <Link href="/login" passHref>
                                              <Button variant="outlined" sx={{ mr: 2 }}>
-                                                  Sign In
+                                                  Signin
                                              </Button>
                                         </Link>
                                         <Link href="/signup" passHref>
                                              <Button variant="contained">
-                                                  Sign Up
+                                                  Signup
                                              </Button>
                                         </Link>
                                    </>
@@ -222,7 +221,7 @@ const ResponsiveAppBar = (props) => {
 
                          {/* Mobile Menu Icon */}
                          <Box sx={{ display: { xs: 'block', md: 'none' } }}>
-                              <IconButton color="inherit" aria-label="open drawer" edge="end" onClick={handleDrawerToggle}>
+                              <IconButton color="gray" aria-label="open drawer" edge="end" onClick={handleDrawerToggle}>
                                    <MenuIcon />
                               </IconButton>
                          </Box>

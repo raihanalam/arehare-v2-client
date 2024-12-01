@@ -1,73 +1,189 @@
-import { Typography, Box, Container, Grid, Card, CardContent, Avatar } from '@mui/material';
-import { styled } from '@mui/system';
-import { Brush, Code, BarChart, ContentCopy, Search, Campaign } from '@mui/icons-material';
+import React from "react";
+import { Typography, Container, Box, Card, IconButton } from "@mui/material";
+import { styled } from "@mui/system";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import GraphicEqIcon from "@mui/icons-material/GraphicEq";
+import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import CampaignIcon from "@mui/icons-material/Campaign";
+import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+import VideocamIcon from "@mui/icons-material/Videocam";
+import TranslateIcon from "@mui/icons-material/Translate";
+import CodeIcon from "@mui/icons-material/Code";
+import DataObjectIcon from "@mui/icons-material/DataObject";
 
-// New Section Style
-const StyledSection = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(10, 0),
-  backgroundColor: '#f7f7f7',
-  textAlign: 'center',
+// Import Swiper and its CSS
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css"; // Base Swiper styles
+import "swiper/css/navigation"; // Navigation styles
+import { Navigation } from "swiper/modules";
+
+// Styled Card
+const StyledCard = styled(Card)(({ theme }) => ({
+  height: 160,
+  textAlign: "center",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  backgroundColor: "#fff",
+  borderRadius: theme.spacing(2),
+  boxShadow: theme.shadows[1],
+  "&:hover": {
+    transform: "scale(1.05)",
+    boxShadow: theme.shadows[6],
+  },
+  transition: "transform 0.3s ease-in-out",
 }));
 
-// Card style
-const StyledCard = styled(Card)(({ theme }) => ({
-  padding: theme.spacing(2),
-  textAlign: 'center',
-  transition: 'transform 0.3s ease-in-out',
-  '&:hover': {
-    transform: 'translateY(-10px)',
-    boxShadow: theme.shadows[6],
+// Styled Arrow Button
+const ArrowButton = styled(IconButton)(({ theme }) => ({
+  backgroundColor: "#fff",
+  boxShadow: theme.shadows[3],
+  "&:hover": {
+    backgroundColor: "#e0e0e0",
   },
 }));
 
-// Icon style
-const StyledAvatar = styled(Avatar)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
-  width: 60,
-  height: 60,
-  margin: '0 auto',
-  marginBottom: theme.spacing(2),
-}));
+export default function ServiceCategories() {
+  const categories = [
+    {
+      title: "Programming & Tech",
+      services: "5 services",
+      icon: <CodeIcon fontSize="large" />,
+    },
+    {
+      title: "AI Solutions",
+      services: "3 services",
+      icon: <DataObjectIcon fontSize="large" />,
+    },
+    {
+      title: "Graphic & Design",
+      services: "3 services",
+      icon: <GraphicEqIcon fontSize="large" />,
+    },
+    {
+      title: "Video & Animation",
+      services: "4 services",
+      icon: <VideocamIcon fontSize="large" />,
+    },
+    {
+      title: "Finance & Accounting",
+      services: "4 services",
+      icon: <AccountBalanceIcon fontSize="large" />,
+    },
+    {
+      title: "Marketing & Sales",
+      services: "4 services",
+      icon: <CampaignIcon fontSize="large" />,
+    },
+    {
+      title: "Photography & Editor",
+      services: "4 services",
+      icon: <PhotoCameraIcon fontSize="large" />,
+    },
+    {
+      title: "Writing & Translation",
+      services: "4 services",
+      icon: <TranslateIcon fontSize="large" />,
+    },
+  ];
 
-// Category data
-const categories = [
-  { title: 'AI Integration', description: 'Innovative AI research and development services.', icon: <BarChart /> },
-  { title: 'Web Development', description: 'Top-notch web design and development services.', icon: <Code /> },
-  { title: 'Graphic Design', description: 'Creative and unique graphic design solutions .', icon: <Brush /> },
-  { title: 'SEO Services', description: 'Improve your search engine rankings with expert SEO.', icon: <Search /> },
-  { title: 'Content Writing', description: 'Engaging and high-quality content for your business.', icon: <ContentCopy /> },
-  { title: 'Digital Marketing', description: 'Comprehensive digital marketing strategies.', icon: <Campaign /> },
-];
-
-// New Section Component - Top-notch Digital Solutions
-export default function SolutionsSection() {
   return (
-    <StyledSection>
-      <Container maxWidth="xl">
-        <Typography variant="h3" gutterBottom>
-          Top-notch Digital Solutions
-        </Typography>
-        <Typography variant="body1" paragraph>
-          Explore our diverse range of digital services to help grow your business.
-        </Typography>
-        <Grid container spacing={3} sx={{ marginTop: 3 }}>
-          {categories.map((category, index) => (
-            <Grid item xs={12} sm={6} md={4} key={index}>
-              <StyledCard>
-                <StyledAvatar>
-                  {category.icon}
-                </StyledAvatar>
-                <CardContent>
-                  <Typography variant="h5" gutterBottom>{category.title}</Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {category.description}
-                  </Typography>
-                </CardContent>
-              </StyledCard>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-    </StyledSection>
+    <Container
+      maxWidth="xl"
+      sx={{
+        marginTop: 5,
+        textAlign: "center",
+        position: "relative",
+        backgroundColor: "#f9fafc",
+        padding: "40px",
+        borderRadius: "8px",
+      }}
+    >
+      <div style={{ display: 'flex', alignContent: 'center' }}>
+
+        <div style={{ textAlign: "left" }}>
+          <Typography
+            variant="h4"
+            sx={{ fontWeight: "bold", mb: 1, display: "inline-block" }}
+          >
+            Service Categories
+          </Typography>
+
+          <Typography variant="body1" sx={{ color: "text.secondary", mb: 3 }}>
+            Explore the most popular service categories
+          </Typography>
+        </div>
+
+        {/* Custom Navigation Buttons */}
+        <div
+          style={{
+            position: "absolute",
+            top: "20px",
+            right: "20px",
+            display: "flex",
+            gap: "10px",
+          }}
+        >
+          <ArrowButton className="custom-swiper-button-prev">
+            <ChevronLeftIcon
+              sx={{
+                cursor: "pointer",
+                fontSize: 32,
+                "&:hover": { color: "gray" },
+              }}
+            />
+          </ArrowButton>
+          <ArrowButton className="custom-swiper-button-next">
+            <ChevronRightIcon
+              sx={{
+                cursor: "pointer",
+                fontSize: 32,
+                "&:hover": { color: "gray" },
+              }}
+            />
+          </ArrowButton>
+        </div>
+
+      </div>
+
+      {/* Swiper Slider */}
+      <Swiper
+        slidesPerView={6} // Show 6 items per slide
+        spaceBetween={30}
+        loop={true} // Enable looping
+        autoplay={{
+          delay: 3000, // Set autoplay delay in milliseconds
+          disableOnInteraction: false, // Keep autoplay running even after user interaction
+        }}
+        navigation={{
+          nextEl: ".custom-swiper-button-next",
+          prevEl: ".custom-swiper-button-prev",
+        }}
+        modules={[Navigation]}
+        pagination={false} // Remove dots
+        breakpoints={{
+          1024: { slidesPerView: 4 },
+          768: { slidesPerView: 3 },
+          480: { slidesPerView: 2 },
+        }}
+        style={{ padding: "20px 0" }}
+      >
+        {categories.map((category, index) => (
+          <SwiperSlide key={index}>
+            <StyledCard>
+              <Box mb={1} sx={{color: 'gray'}}>{category.icon}</Box>
+              <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                {category.title}
+              </Typography>
+              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+                {category.services}
+              </Typography>
+            </StyledCard>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Container>
   );
 }

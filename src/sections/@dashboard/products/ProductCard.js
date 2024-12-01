@@ -13,7 +13,13 @@ const StyledProductImg = styled('img')({
   width: '100%',
   height: 240, // Adjusted height
   objectFit: 'cover',
+  transition: 'transform 0.3s ease-in-out', // Add transition effect
+  '&:hover': {
+    transform: 'scale(1.05)', // Slight zoom on hover
+  },
+  
 });
+
 
 const StyledAvatar = styled(Avatar)({
   width: 40,
@@ -47,7 +53,7 @@ export default function ShopProductCard({ product }) {
         {product?.status && (
           <Label
             variant="filled"
-            color={(product.status === 'Pro' && 'error') || 'info'}
+            color={(product.status === 'Featured' && 'error') || 'info'}
             sx={{
               zIndex: 9,
               top: 16,
