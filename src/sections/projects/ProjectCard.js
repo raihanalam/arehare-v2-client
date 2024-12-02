@@ -42,9 +42,9 @@ const ProjectCard = ({ project }) => (
         </Typography>
 
         {/* Proposals */}
-        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
+        {/* <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
           {project.proposalsCount} sent proposal{project.proposalsCount > 1 ? 's' : ''}
-        </Typography>
+        </Typography> */}
 
         {/* Divider */}
         <Divider sx={{ my: 1 }} />

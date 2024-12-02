@@ -52,7 +52,7 @@ const CallToActionBtn = styled(Button)({
 
 const BuilderSection = () => {
   return (
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" sx={{mt: 10}}>
 
       <SectionContainer sx={{ padding: '60px' }}>
         {/* Text Section */}

@@ -67,7 +67,7 @@ export default function HeroSection() {
   return (
     <Hero>
       <Typography variant="h1"  gutterBottom  sx={{fontFamily: "DM Sans, Sans-serif", fontSize: "56px", fontWeight: "500",lineWeight: "1.1em"}}>
-        Find The Best <br/> <span style={{ color: "#007bff", fontWeight: "500", fontStyle: "italic" }}>Freelance Talent</span>
+        Find The Best <br/> <span style={{ color:'transparent', backgroundImage: 'linear-gradient(90deg, #0A4EFB 0%, #F77991 100%)', backgroundClip: "text", fontWeight: "500"}}>Freelance Talent</span>
       </Typography>
       <Typography variant="body1" paragraph>
         Find the perfect talent exactly when you need

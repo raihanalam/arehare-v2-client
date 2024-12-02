@@ -29,8 +29,8 @@ const Card = styled(Box)({
 });
 
 const Image = styled('img')({
-  width: '100%',
-  height: '100%',
+  width: '600px',
+  height: '300px',
   objectFit: 'cover',
 });
 
@@ -87,22 +87,7 @@ const imageCards = [
     src: 'assets/images/products/service-21.jpg',
     title: 'Card 6',
     link: '/card-6',
-  },
-  {
-    src: 'assets/images/products/service-22.jpg',
-    title: 'Card 7',
-    link: '/card-7',
-  },
-  {
-    src: 'assets/images/products/service-16.jpg',
-    title: 'Card 8',
-    link: '/card-8',
-  },
-  {
-    src: 'assets/images/products/service-13.jpg',
-    title: 'Card 8',
-    link: '/card-8',
-  },
+  }
 ];
 
 const HoverCardComponent = () => {
@@ -118,7 +103,7 @@ const HoverCardComponent = () => {
               <Image src={card.src} alt={card.title} />
               <CardContent className="card-content">
                 <Typography variant="h6">{card.title}</Typography>
-                <DiscoverButton variant="contained">Discover</DiscoverButton>
+                <DiscoverButton variant="outlined">Discover</DiscoverButton>
               </CardContent>
             </Card>
           </a>

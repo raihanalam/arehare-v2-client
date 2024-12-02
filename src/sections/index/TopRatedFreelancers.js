@@ -160,7 +160,7 @@ const TopRatedFreelancers = () => {
                 {/* Rating with a single star and rating count */}
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'left ' }}>
                   <div style={{ display: "flex" }}>
-                    <StarIcon sx={{ color: 'gold', fontSize: 24 }} />
+                    <StarIcon sx={{ color: '#faaf00', fontSize: 20 }} />
                     <Typography variant="body2" sx={{ ml: 1 }}>
                       {freelancer.rating}
                     </Typography>
@@ -217,7 +217,21 @@ const TopRatedFreelancers = () => {
         </Swiper>
 
         {/* Custom Pagination Dots */}
-        <Box sx={{ textAlign: 'center' }} className="custom-pagination"></Box>
+        <Box sx={{
+          '& .swiper-pagination-bullet': {
+            width: '10px', // Larger dots
+            height: '10px',
+            backgroundColor: '#ccc', // Default color
+            opacity: 1,
+            margin: '0 10px', // Spacing around dots
+            borderRadius: '50%',
+            transition: 'background-color 0.3s ease, transform 0.3s ease',
+          },
+          '& .swiper-pagination-bullet-active': {
+            backgroundColor: '#007BFF', // Active dot color
+            transform: 'scale(1.3)', // Highlight active dot
+          }, textAlign: "center", marginTop: '20px'
+        }} className="custom-pagination"></Box>
 
       </Box>
     </Container>

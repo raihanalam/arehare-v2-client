@@ -28,10 +28,10 @@ export default function HomePage() {
                <SolutionsSection />
                <ServiceSection />
                <TopRatedFreelancers/>
-               <HoverCardComponent/>
                <LatestProjectsSection />;
+               <HoverCardComponent/>
                <ReviewSlider/>
-               <BuilderSection/>
+               {/* <BuilderSection/> */}
                <BlogSection />
                <Footer/>
           </>

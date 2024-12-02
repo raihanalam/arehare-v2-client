@@ -1,40 +1,62 @@
-// component
-import SvgColor from '../../../components/svg-color';
+// Component
+import { Home, Person, Work, AccountBalanceWallet, Message, Schedule, Gavel, Settings, ExitToApp, Build, Description, LocalOffer, AccountBalance, VideoCall  } from '@mui/icons-material';
 
 // ----------------------------------------------------------------------
 
-const icon = (name) => <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />;
-
 const navConfig = [
   {
-    title: 'dashboard',
+    title: 'Home',
     path: '/dashboard',
-    icon: icon('ic_analytics'),
+    icon: <Home fontSize="medium" />,
   },
   {
-    title: 'user',
-    path: '/dashboard/user',
-    icon: icon('ic_user'),
+    title: 'Profile',
+    path: '/dashboard/profile',
+    icon: <Person fontSize="medium" />,
   },
   {
-    title: 'product',
-    path: '/dashboard/products',
-    icon: icon('ic_cart'),
+    title: 'Services',
+    path: '/dashboard/services',
+    icon: <LocalOffer fontSize="medium" />, // Represents digital services or offerings
   },
   {
-    title: 'blog',
-    path: '/dashboard/blog',
-    icon: icon('ic_blog'),
+    title: 'Projects',
+    path: '/dashboard/projects',
+    icon: <Work fontSize="medium" />,
   },
   {
-    title: 'login',
-    path: '/login',
-    icon: icon('ic_lock'),
+    title: 'Proposals',
+    path: '/dashboard/proposals',
+    icon: <Description fontSize="medium" />,
   },
   {
-    title: 'Not found',
-    path: '/404',
-    icon: icon('ic_disabled'),
+    title: 'Wallet',
+    path: '/dashboard/wallet',
+    icon: <AccountBalanceWallet fontSize="medium" />,  },
+  {
+    title: 'Messages',
+    path: '/dashboard/messages',
+    icon: <Message fontSize="medium" />,
+  },
+  {
+    title: 'Meetings',
+    path: '/dashboard/meetings',
+    icon: <VideoCall fontSize="medium" />,
+  },
+  {
+    title: 'Disputes',
+    path: '/dashboard/disputes',
+    icon: <Gavel fontSize="medium" />,
+  },
+  {
+    title: 'Settings',
+    path: '/dashboard/settings',
+    icon: <Settings fontSize="medium" />,
+  },
+  {
+    title: 'Logout',
+    path: '/logout',
+    icon: <ExitToApp fontSize="medium" />,
   },
 ];
 
