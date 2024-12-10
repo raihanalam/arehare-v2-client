@@ -10,6 +10,9 @@ import LanguageIcon from '@mui/icons-material/Language';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import StarIcon from '@mui/icons-material/Star';
 
+import SectionHeader from '../../components/section/SectionHeader';
+import SectionFooter from '../../components/section/SectionFooter';
+
 // Mock Data
 const freelancers = [
   {
@@ -99,12 +102,14 @@ const TopRatedFreelancers = () => {
   return (
     <Container maxWidth="xl">
       <Box sx={{ mt: 4, px: 2 }}>
-        <Typography variant="h4" align="center" sx={{ mb: 2 }}>
-          Top Rated Freelancers
-        </Typography>
-        <Typography variant="body2" align="center" sx={{ mb: 4 }}>
-          Explore the best freelancers with top ratings.
-        </Typography>
+
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <SectionHeader
+            title=" Top Rated Freelancers"
+            subtitle="Explore the best freelancers with top ratings."
+          />
+          <SectionFooter />
+        </Box>
 
         <Swiper
           slidesPerView={1}
@@ -229,6 +234,9 @@ const TopRatedFreelancers = () => {
           },
           '& .swiper-pagination-bullet-active': {
             backgroundColor: '#007BFF', // Active dot color
+            height: '10px',
+            width: '30px',
+            borderRadius: '10px',
             transform: 'scale(1.3)', // Highlight active dot
           }, textAlign: "center", marginTop: '20px'
         }} className="custom-pagination"></Box>

@@ -12,6 +12,10 @@ import TranslateIcon from "@mui/icons-material/Translate";
 import CodeIcon from "@mui/icons-material/Code";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 
+
+import SectionHeader from '../../components/section/SectionHeader';
+import SectionFooter from '../../components/section/SectionFooter';
+
 // Import Swiper and its CSS
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Base Swiper styles
@@ -94,28 +98,18 @@ export default function ServiceCategories() {
       maxWidth="xl"
       sx={{
         marginTop: 5,
-        textAlign: "center",
         position: "relative",
         backgroundColor: "#f9fafc",
         padding: "40px",
         borderRadius: "8px",
       }}
     >
-      <div style={{ display: 'flex', alignContent: 'center' }}>
-
-        <div style={{ textAlign: "left" }}>
-          <Typography
-            variant="h4"
-            sx={{ fontWeight: "bold", mb: 1, display: "inline-block" }}
-          >
-            Service Categories
-          </Typography>
-
-          <Typography variant="body1" sx={{ color: "text.secondary", mb: 3 }}>
-            Explore the most popular service categories
-          </Typography>
-        </div>
-
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <SectionHeader
+          title="Service Categories"
+          subtitle="Explore the most popular service categories."
+          sx={{ textAlign: "left"}}
+        />
         {/* Custom Navigation Buttons */}
         <div
           style={{
@@ -146,7 +140,8 @@ export default function ServiceCategories() {
           </ArrowButton>
         </div>
 
-      </div>
+      </Box>
+
 
       {/* Swiper Slider */}
       <Swiper
@@ -173,7 +168,7 @@ export default function ServiceCategories() {
         {categories.map((category, index) => (
           <SwiperSlide key={index}>
             <StyledCard>
-              <Box mb={1} sx={{color: 'gray'}}>{category.icon}</Box>
+              <Box mb={1} sx={{ color: 'gray' }}>{category.icon}</Box>
               <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
                 {category.title}
               </Typography>

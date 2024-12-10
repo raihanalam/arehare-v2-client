@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
 import { Container, Box } from '@mui/material';
-import SectionHeader from './SectionHeader';
+import SectionHeader from '../../components/section/SectionHeader';
 import ProjectList from './ProjectList';
-import SectionFooter from './SectionFooter';
+import SectionFooter from '../../components/section/SectionFooter';
 import PROJECTS from '../../_mock/projects';
 
 // Mock data

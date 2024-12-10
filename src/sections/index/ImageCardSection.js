@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Button, Container } from '@mui/material';
+import { Box, Typography, Container } from '@mui/material';
 import { styled } from '@mui/system';
 
 const CardContainer = styled(Box)(({ theme }) => ({
@@ -16,7 +16,6 @@ const Card = styled(Box)({
   position: 'relative',
   borderRadius: '10px',
   overflow: 'hidden',
-  // height: '300px',
   cursor: 'pointer',
   transition: 'transform 0.3s ease-in-out',
   '&:hover': {
@@ -48,62 +47,52 @@ const CardContent = styled(Box)({
   transition: 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out',
 });
 
-const DiscoverButton = styled(Button)({
-  marginTop: '10px',
-  backgroundColor: '#fff',
-  color: '#000',
-  '&:hover': {
-    backgroundColor: '#ddd',
-  },
-});
-
-const imageCards = [
+const portfolioCards = [
   {
     src: 'assets/images/products/service-11.jpg',
-    title: 'Card 1',
+    title: 'Creative Logo Design',
     link: '/card-1',
   },
   {
     src: 'assets/images/products/service-15.jpg',
-    title: 'Card 2',
+    title: 'Professional Website Development',
     link: '/card-2',
   },
   {
     src: 'assets/images/products/service-14.jpg',
-    title: 'Card 3',
+    title: 'E-Commerce Store Setup',
     link: '/card-3',
   },
   {
     src: 'assets/images/products/service-17.jpg',
-    title: 'Card 4',
+    title: 'Custom Mobile App Development',
     link: '/card-4',
   },
   {
     src: 'assets/images/products/service-18.jpg',
-    title: 'Card 5',
+    title: 'Digital Marketing Solutions',
     link: '/card-5',
   },
   {
     src: 'assets/images/products/service-21.jpg',
-    title: 'Card 6',
+    title: 'SEO and Content Optimization',
     link: '/card-6',
-  }
+  },
 ];
 
 const HoverCardComponent = () => {
   return (
     <Container maxWidth="xl">
-      <Typography variant='h3' sx={{mt:10, mb:5, textAlign: 'center'}}>
+      <Typography variant='h3' sx={{ mt: 10, mb: 5, textAlign: 'center' }}>
         Some Works Of Our Freelancers
       </Typography>
       <CardContainer>
-        {imageCards.map((card, index) => (
+        {portfolioCards.map((card, index) => (
           <a key={index} href={card.link} style={{ textDecoration: 'none' }}>
             <Card>
               <Image src={card.src} alt={card.title} />
               <CardContent className="card-content">
                 <Typography variant="h6">{card.title}</Typography>
-                <DiscoverButton variant="outlined">Discover</DiscoverButton>
               </CardContent>
             </Card>
           </a>

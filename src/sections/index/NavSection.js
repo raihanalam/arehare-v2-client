@@ -14,7 +14,9 @@ import ResponsiveAppBar from '@/components/app-bar/ResponsiveAppBar';
 const StyledNavBar = styled(AppBar)(({ theme }) => ({
      // backgroundColor: 'rgba(147, 106, 188, 0.04)',
      backgroundColor: '#ffffff',
-     boxShadow: theme.shadows[2],
+     // boxShadow: theme.shadows[2],
+     boxShadow: 'none',
+
 }));
 
 // Navbar Component

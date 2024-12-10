@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import { Box, IconButton } from '@mui/material';
 import { useEffect, useState } from 'react';
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import { styled } from "@mui/system";
+
 
 // Import Swiper and its CSS
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,51 +15,72 @@ import { Navigation } from "swiper/modules";
 // Import ProjectCard component
 import ProjectCard from './ProjectCard';
 
+const ArrowButton = styled(IconButton)(({ theme }) => ({
+  backgroundColor: "#fff",
+  boxShadow: theme.shadows[3],
+  "&:hover": {
+    backgroundColor: "#e0e0e0",
+  },
+}));
 const ProjectList = ({ projects }) => {
-
   return (
     <Box sx={{ position: 'relative', width: '100%' }}>
-      {/* Navigation Buttons */}
-      <IconButton
-        className="swiper-button-prev"
+      {/* Redesigned Navigation Buttons */}
+      <ArrowButton
+        className="custom2-swiper-button-prev"
         sx={{
           position: 'absolute',
-          top: '50%',
-          left: 0,
+          top: '105%',
+          left: 10,
           zIndex: 10,
           transform: 'translateY(-50%)',
-          backgroundColor: '#fff',
-          boxShadow: 1,
-          '&:hover': { backgroundColor: '#f0f0f0' },
+          backgroundColor: '#ffffff',
+          boxShadow: 2,
+          border: '1px solid #ddd',
+          '&:hover': {
+            backgroundColor: '#f9f9f9',
+          },
         }}
       >
-        <ArrowBackIosIcon />
-      </IconButton>
-      <IconButton
-        className="swiper-button-next"
+        <ArrowLeftIcon sx={{
+          cursor: "pointer",
+          fontSize: 32,
+          "&:hover": { color: "gray" },
+        }} />
+      </ArrowButton>
+      <ArrowButton
+        className="custom2-swiper-button-next"
         sx={{
           position: 'absolute',
-          top: '50%',
-          right: 0,
+          top: '105%',
+          right: 10,
           zIndex: 10,
           transform: 'translateY(-50%)',
-          backgroundColor: '#fff',
-          boxShadow: 1,
-          '&:hover': { backgroundColor: '#f0f0f0' },
+          backgroundColor: '#ffffff',
+          boxShadow: 2,
+          border: '1px solid #ddd',
+          '&:hover': {
+            backgroundColor: '#f9f9f9',
+          },
         }}
       >
-        <ArrowForwardIosIcon />
-      </IconButton>
+        <ArrowRightIcon sx={{
+          cursor: "pointer",
+          fontSize: 32,
+          "&:hover": { color: "gray" },
+        }} />
+      </ArrowButton>
 
       {/* Swiper Component */}
       <Swiper
         modules={[Navigation]} // Pass Navigation module here
         slidesPerView={2}
         slidesPerGroup={2}
+        loop={true} // Enable looping
         spaceBetween={20}
         navigation={{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.custom2-swiper-button-next',
+          prevEl: '.custom2-swiper-button-prev',
         }}
         breakpoints={{
           0: { slidesPerView: 1, slidesPerGroup: 1 }, // 1 item for mobile
@@ -100,6 +123,3 @@ ProjectList.propTypes = {
 };
 
 export default ProjectList;
-
-
-
