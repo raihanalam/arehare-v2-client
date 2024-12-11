@@ -10,8 +10,8 @@ import LanguageIcon from '@mui/icons-material/Language';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import StarIcon from '@mui/icons-material/Star';
 
-import SectionHeader from '../../components/section/SectionHeader';
-import SectionFooter from '../../components/section/SectionFooter';
+import SectionHeaderLeft from '../../components/section/SectionHeaderLeft';
+import SectionHeaderRight from '@/components/section/SectionHeaderRight';
 
 // Mock Data
 const freelancers = [
@@ -103,12 +103,12 @@ const TopRatedFreelancers = () => {
     <Container maxWidth="xl">
       <Box sx={{ mt: 4, px: 2 }}>
 
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-          <SectionHeader
+        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+          <SectionHeaderLeft
             title=" Top Rated Freelancers"
             subtitle="Explore the best freelancers with top ratings."
           />
-          <SectionFooter />
+          <SectionHeaderRight text="Explore All Freelancers" />
         </Box>
 
         <Swiper
@@ -228,7 +228,7 @@ const TopRatedFreelancers = () => {
             height: '10px',
             backgroundColor: '#ccc', // Default color
             opacity: 1,
-            margin: '0 10px', // Spacing around dots
+            margin: '0 20px', // Spacing around dots
             borderRadius: '50%',
             transition: 'background-color 0.3s ease, transform 0.3s ease',
           },

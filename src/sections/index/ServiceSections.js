@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import { Button, Typography, Container, Stack, Divider } from '@mui/material';
+import { Button, Typography, Container, Stack, Divider, Box } from '@mui/material';
 
 // components
 import { ProductSort, ProductList, ProductFilterSidebar } from '../@dashboard/products';
+
+import SectionHeaderLeft from '../../components/section/SectionHeaderLeft';
+import SectionHeaderRight from '../../components/section/SectionHeaderRight';
 
 // Mock
 import PRODUCTS from '../../_mock/products';
@@ -32,32 +35,14 @@ export default function ServiceSection() {
 
           <Container maxWidth="xl">
 
+               <Box sx={{ display: "flex", alignContent: 'center', alignItems: "center", justifyContent: "space-between" }}>
+                    <SectionHeaderLeft
+                         title="Featured Services"
+                         subtitle="Explore the most demandig services."
+                    />
+                    <SectionHeaderRight text="Explore All Services" />
+               </Box>
 
-
-               <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="space-between" sx={{ mb: 5, mt: 5 }}>
-                    <div style={{ textAlign: "left" }}>
-                         <Typography
-                              variant="h4"
-                              sx={{ fontWeight: "bold", mb: 1, display: "inline-block" }}
-                         >
-                               Featured Services
-                         </Typography>
-
-                         <Typography variant="body1" sx={{ color: "text.secondary", mb: 3 }}>
-                              Explore the most demandig services
-                         </Typography>
-                    </div>
-
-                    <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
-
-                         <ProductFilterSidebar
-                              openFilter={openFilter}
-                              onOpenFilter={handleOpenFilter}
-                              onCloseFilter={handleCloseFilter}
-                         />
-                         <ProductSort />
-                    </Stack>
-               </Stack>
 
                <ProductList products={productsData} />
                <Divider sx={{ mt: 3, mb: 3 }}>

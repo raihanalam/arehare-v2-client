@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Typography, Stack } from '@mui/material';
 
-const SectionHeader = ({ title, subtitle }) => (
+const SectionHeaderLeft = ({ title, subtitle }) => (
   <Stack spacing={1} alignItems="left" sx={{ mb: 4 }}>
     <Typography variant="h4" fontWeight="bold">
       {title}
@@ -12,9 +12,9 @@ const SectionHeader = ({ title, subtitle }) => (
   </Stack>
 );
 
-SectionHeader.propTypes = {
+SectionHeaderLeft.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
 };
 
-export default SectionHeader;
+export default SectionHeaderLeft;

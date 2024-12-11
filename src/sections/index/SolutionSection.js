@@ -13,8 +13,7 @@ import CodeIcon from "@mui/icons-material/Code";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 
 
-import SectionHeader from '../../components/section/SectionHeader';
-import SectionFooter from '../../components/section/SectionFooter';
+import SectionHeaderLeft from '../../components/section/SectionHeaderLeft';
 
 // Import Swiper and its CSS
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -104,8 +103,8 @@ export default function ServiceCategories() {
         borderRadius: "8px",
       }}
     >
-      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-        <SectionHeader
+      <Box sx={{ display: "flex", alignContent: "center" ,alignItems: "center", justifyContent: "space-between" }}>
+        <SectionHeaderLeft
           title="Service Categories"
           subtitle="Explore the most popular service categories."
           sx={{ textAlign: "left"}}

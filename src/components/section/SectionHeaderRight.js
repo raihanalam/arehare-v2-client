@@ -1,9 +1,9 @@
 import { Button } from '@mui/material';
 
-const SectionFooter = () => (
+const SectionHeaderRight = ({text}) => (
   <Button variant="text" color="primary" size="large" sx={{ mt: 3 }}>
-    Explore All Projects
+    {text}
   </Button>
 );
 
-export default SectionFooter;
+export default SectionHeaderRight;

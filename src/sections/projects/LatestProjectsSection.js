@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 
 import { Container, Box } from '@mui/material';
-import SectionHeader from '../../components/section/SectionHeader';
 import ProjectList from './ProjectList';
-import SectionFooter from '../../components/section/SectionFooter';
 import PROJECTS from '../../_mock/projects';
+
+import SectionHeaderLeft from '../../components/section/SectionHeaderLeft';
+import SectionHeaderRight from '@/components/section/SectionHeaderRight';
 
 // Mock data
 
@@ -25,11 +26,11 @@ export default function LatestProjectsSection() {
 
     <Container maxWidth="xl">
       <Box sx={{display: "flex" , justifyContent: "space-between"}}>
-      <SectionHeader
+      <SectionHeaderLeft
         title="Latest Projects"
         subtitle="Explore the best projects that benefit you"
       />
-      <SectionFooter />
+      <SectionHeaderRight text="Explore New Projects" />
       </Box>
       <ProjectList projects={projects} />
       
