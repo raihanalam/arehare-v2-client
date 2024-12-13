@@ -11,21 +11,21 @@ import ResponsiveAppBar from '@/components/app-bar/ResponsiveAppBar';
 
 // Styled Components
 
-const StyledNavBar = styled(AppBar)(({ theme }) => ({
-     // backgroundColor: 'rgba(147, 106, 188, 0.04)',
-     backgroundColor: '#ffffff',
-     // boxShadow: theme.shadows[2],
-     boxShadow: 'none',
+// const StyledNavBar = styled(AppBar)(({ theme }) => ({
+//      // backgroundColor: 'rgba(147, 106, 188, 0.04)',
+//      backgroundColor: '#ffffff',
+//      // boxShadow: theme.shadows[2],
+//      boxShadow: 'none',
 
-}));
+// }));
 
 // Navbar Component
 export default function Navbar() {
      const isMobile = useResponsive('down', 'md');
 
      return (
-          <StyledNavBar>
+          // <StyledNavBar>
                <ResponsiveAppBar/>
-          </StyledNavBar>
+          // </StyledNavBar>
      );
 }

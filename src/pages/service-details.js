@@ -20,8 +20,16 @@ import {
   Accordion,
   AccordionSummary,
   AccordionDetails,
+  Chip,
+  Avatar,
+  Stack
 
 } from '@mui/material';
+import StreetviewIcon from '@mui/icons-material/Streetview';
+import StarIcon from '@mui/icons-material/Star';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import LanguageIcon from '@mui/icons-material/Language';
+import ReceiptIcon from '@mui/icons-material/Receipt';
 import { Favorite, Share, Star, Visibility } from '@mui/icons-material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -30,11 +38,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Navigation, Pagination } from 'swiper/modules';
 import Image from 'next/image';
+import Navbar from '@/sections/index/NavSection';
 
 // Breadcrumbs Component
 const Breadcrumbs = () => (
-  <Box mb={3}>
-    <Typography variant="body4" color="text.secondary">
+  <Box mb={2} pt={5}>
+    <Typography variant="body1" color="text.secondary">
       {"Home > Services > Details"}
     </Typography>
   </Box>
@@ -45,18 +54,20 @@ const Header = () => (
   <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: 2 }}>
     <Box>
       <Typography variant="h3">I will craft engaging social media marketing, copywriting</Typography>
+     
+      <Box display="flex" gap={2} mt={1} sx={{color: 'gray'}}>
       <Typography variant="body1" color="text.secondary">
-        By Kianna Bie | Supporter • Rochester • English
+        By Kianna Bie
       </Typography>
-      <Box display="flex" gap={2} mt={1}>
-        <Typography variant="body2" display="flex" alignItems="center">
-          <Star sx={{ color: '#FFD700' }} />
+        <Typography variant="body2" display="flex" alignItems="center" >
+          <Star sx={{ mr: '5px' }}/>
           4.8 (50 ratings)
         </Typography>
-        <Typography variant="body2" display="flex" alignItems="center">
-          <Visibility /> 1.2k views
+        <Typography variant="body2" display="flex" alignItems="center" >
+          <StreetviewIcon sx={{marginRight: '5px'}}/> 1.2k views
         </Typography>
-        <Typography variant="body2" display="flex" alignItems="center">• 120 sales</Typography>
+        <Typography variant="body2" display="flex" alignItems="center">
+           <ReceiptIcon sx={{marginRight: '5px'}}/>120 sales</Typography>
       </Box>
     </Box>
     <Box>
@@ -72,7 +83,7 @@ const Header = () => (
 
 // Packages Component
 const Packages = ({ packages, selectedTab, onSelect }) => (
-  <Box mt={3} >
+  <Box mt={3} sx={{border: '1', borderRadius: '20px', borderColor: 'gray'}}>
     <Tabs value={selectedTab} onChange={(e, val) => onSelect(val)} variant="fullWidth">
       {packages.map((pkg) => (
         <Tab key={pkg.name} label={pkg.name} />
@@ -103,11 +114,27 @@ const ServiceDetails = () => {
     { name: 'Standard', price: 100, delivery: '7 days', revisions: 2, features: ['Engage and connect'] },
     { name: 'Premium', price: 140, delivery: '10 days', revisions: '-', features: ['Explain and Excite'] },
   ];
+  const freelancer = 
+  {
+    id: 6,
+    name: 'Lucy Haley',
+    role: 'Human Resources',
+    rating: 4.5,
+    price: '$60/day',
+    tags: ['Recruitment', 'Software'],
+    avatar: '/path-to-avatar4.jpg',
+    location: 'Los Angeles, USA',
+    languages: 'English, German',
+    intro: 'Experienced in recruitment processes.',
+    featured: true,
+  }
 
   return (
-    <Container maxWidth="lg" sx={{ mt: 5, mb: 5 }}>
+    <Container maxWidth="xl" sx={{ mt: 5, mb: 5 }}>
+
+      <Navbar />
       {/* Breadcrumbs */}
-      <Breadcrumbs />
+      <Breadcrumbs  />
 
       {/* Header */}
       <Header />
@@ -146,9 +173,9 @@ const ServiceDetails = () => {
             </Typography>
             <Box display="flex" gap={2}>
               {['Content Writing', 'Digital Marketing', 'Social Media Marketing'].map((skill) => (
-                <Box key={skill} sx={{ p: 1, border: '1px solid #ccc', borderRadius: 2 }}>
+                <Button key={skill} sx={{ p: 1, border: '1px solid #ccc', borderRadius: 2 }}>
                   <Typography variant="body2">{skill}</Typography>
-                </Box>
+                </Button>
               ))}
             </Box>
           </Box>
@@ -221,6 +248,48 @@ const ServiceDetails = () => {
             {/* Profile Card */}
             <Card sx={{ mt: 3 }}>
               <CardContent>
+              <Avatar
+                  alt={freelancer.name}
+                  src={freelancer.avatar}
+                  sx={{ width: 80, height: 80, mb: 2 }}
+                />
+                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'left ' }}>
+                  <div style={{ display: "flex" }}>
+                    <StarIcon sx={{ color: '#faaf00', fontSize: 20 }} />
+                    <Typography variant="body2" sx={{ ml: 1 }}>
+                      {freelancer.rating}
+                    </Typography>
+                  </div>
+                  <Typography variant="body2" color="text.secondary" sx={{ ml: 3 }}>
+                    {freelancer.role}
+                  </Typography>
+                </Box>
+
+                <Box>
+                  <Stack direction="row" justifyContent="left" spacing={1} sx={{ mt: 2 }}>
+                    <LocationOnIcon fontSize="small" />
+                    <Typography variant="body2">{freelancer.location}</Typography>
+                  </Stack>
+                  <Stack direction="row" justifyContent="left" spacing={1} sx={{ mt: 1 }}>
+                    <LanguageIcon fontSize="small" />
+                    <Typography variant="body2">{freelancer.languages}</Typography>
+                  </Stack>
+                </Box>
+
+                <Typography variant="body2" sx={{ mt: 2, fontStyle: 'italic' }}>
+                  {freelancer.intro}
+                </Typography>
+
+                <Box sx={{ mt: 2 }}>
+                  {freelancer.tags.map((tag) => (
+                    <Chip
+                      key={tag}
+                      label={tag}
+                      size="small"
+                      sx={{ mx: 0.5, mb: 0.5 }}
+                    />
+                  ))}
+                </Box>
                 <Typography variant="h6">{'Thoms'}</Typography>
                 <Typography variant="body2">{"Dhaka"}</Typography>
                 <Box mt={2} display="flex" gap={2}>

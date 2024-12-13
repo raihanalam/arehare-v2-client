@@ -1,19 +1,15 @@
 import React from "react";
 import {
-  AppBar,
-  Toolbar,
+
   Typography,
   Container,
   Box,
-  Grid,
   Button,
   TextField,
   Select,
   MenuItem,
   InputAdornment,
   Card,
-  CardContent,
-  Avatar,
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { Search, KeyboardArrowDown } from "@mui/icons-material";
@@ -40,27 +36,6 @@ const StyledCard = styled(Card)(({ theme }) => ({
   transition: "transform 0.3s ease-in-out",
 }));
 
-// const Navbar = () => (
-//   <AppBar position="static" sx={{ backgroundColor: "#fff", boxShadow: "none" }}>
-//     <Container maxWidth="xl">
-//       <Toolbar>
-//         <Typography variant="h6" sx={{ flexGrow: 1, color: "#000", fontWeight: "bold" }}>
-//           Felan
-//         </Typography>
-//         <Box sx={{ display: { xs: "none", md: "flex" }, gap: 3 }}>
-//           <Button>Demo</Button>
-//           <Button>Cats</Button>
-//           <Button>Listings</Button>
-//           <Button>Users</Button>
-//           <Button>Pages</Button>
-//         </Box>
-//         <Box sx={{ flexGrow: 1, textAlign: "right" }}>
-//           <Button sx={{ textTransform: "capitalize" }}>Sign In</Button>
-//         </Box>
-//       </Toolbar>
-//     </Container>
-//   </AppBar>
-// );
 
 export default function HeroSection() {
 
@@ -85,7 +60,7 @@ export default function HeroSection() {
           }}
         >
           <TextField
-            placeholder="Freelancer title"
+            placeholder="Search for..."
             variant="outlined"
             fullWidth
             InputProps={{
@@ -97,9 +72,9 @@ export default function HeroSection() {
             }}
           />
           <Select defaultValue="" displayEmpty variant="outlined" sx={{ minWidth: 150 }}>
-            <MenuItem value="">All Cities</MenuItem>
-            <MenuItem value="Dhaka">Dhaka</MenuItem>
-            <MenuItem value="Chittagong">Chittagong</MenuItem>
+            <MenuItem value="">Services</MenuItem>
+            <MenuItem value="Dhaka">Freelancers</MenuItem>
+            <MenuItem value="Chittagong">Projects</MenuItem>
           </Select>
           <Button variant="contained" sx={{ padding: "0 30px", height: "56px" }}>
             Search
@@ -113,39 +88,3 @@ export default function HeroSection() {
   );
 }
 
-// const ServiceCategories = () => {
-//   const categories = [
-//     { title: "Finance Accounting", services: "4 Services" },
-//     { title: "Photography & Editor", services: "4 Services" },
-//     { title: "Marketing & Sales", services: "4 Services" },
-//     { title: "AI Services", services: "5 Services" },
-//     { title: "Programming & Tech", services: "4 Services" },
-//   ];
-
-//   return (
-//     <Container maxWidth="xl" sx={{ marginTop: 5 }}>
-//       <Box display="flex" justifyContent="space-between" alignItems="center">
-//         <Typography variant="h5" sx={{ fontWeight: "bold" }}>
-//           Browse Service by Category
-//         </Typography>
-//         <Button>View All Categories</Button>
-//       </Box>
-//       <Grid container spacing={3} sx={{ marginTop: 2 }}>
-//         {categories.map((category, index) => (
-//           <Grid item xs={12} sm={6} md={4} key={index}>
-//             <StyledCard>
-//               <CardContent>
-//                 <Typography variant="h6">{category.title}</Typography>
-//                 <Typography variant="body2" color="text.secondary">
-//                   {category.services}
-//                 </Typography>
-//               </CardContent>
-//             </StyledCard>
-//           </Grid>
-//         ))}
-//       </Grid>
-//     </Container>
-//   );
-// };
-
-// export default App;

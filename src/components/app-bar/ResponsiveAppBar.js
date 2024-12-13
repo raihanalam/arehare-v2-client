@@ -33,6 +33,8 @@ const ResponsiveAppBar = (props) => {
      const [anchorElUser, setAnchorElUser] = useState(null);
      const [isLoggedIn, setIsLoggedIn] = useState(false); // Mock login state
      const [appBarBg, setAppBarBg] = useState('transparent'); // AppBar background state
+     const [appBarShadow, setAppBarShadow] = useState('none'); // AppBar background state
+
 
      const handleDrawerToggle = () => {
           if (mobileOpen != false) {
@@ -55,10 +57,14 @@ const ResponsiveAppBar = (props) => {
      // Scroll effect to change the AppBar background color
      useEffect(() => {
           const handleScroll = () => {
-               if (window.scrollY > window.innerHeight) {
+               // if (window.scrollY > window.innerHeight) {
+               if (window.scrollY > 20) {
+
                     setAppBarBg('white'); // Set your minimal background color here
+                    setAppBarShadow('')
                } else {
                     setAppBarBg('transparent');
+                    setAppBarShadow('none') 
                }
           };
 
@@ -112,7 +118,7 @@ const ResponsiveAppBar = (props) => {
      );
 
      return (
-          <AppBar position="fixed" sx={{ backgroundColor: appBarBg, transition: 'background-color 0.3s ease' }}>
+          <AppBar position="fixed" sx={{ backgroundColor: appBarBg, /*transition: 'background-color 0.3s ease',*/ boxShadow: appBarShadow}}>
                <Container maxWidth="xl">
                     <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                          <Typography
@@ -122,9 +128,10 @@ const ResponsiveAppBar = (props) => {
                               href="/"
                               sx={{
                                    mr: 2,
-                                   // fontFamily: 'monospace',
+                                   fontFamily: 'monospace',
                                    fontWeight: 700,
                                    letterSpacing: '.3rem',
+                                   // fontStyle: 'italic',
                                    color: 'inherit',
                                    textDecoration: 'none',
                                    color:'#444444'

@@ -113,7 +113,7 @@ export default function ServiceCategories() {
         <div
           style={{
             position: "absolute",
-            top: "20px",
+            top: "50px",
             right: "20px",
             display: "flex",
             gap: "10px",

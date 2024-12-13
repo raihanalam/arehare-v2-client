@@ -41,7 +41,7 @@ const CardContent = styled(Box)({
   backgroundColor: 'rgba(0, 0, 0, 0.6)',
   color: 'white',
   textAlign: 'center',
-  padding: '10px',
+  padding: '140px',
   opacity: 0,
   transform: 'translateY(100%)',
   transition: 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out',
