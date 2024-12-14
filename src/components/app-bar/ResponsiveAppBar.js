@@ -24,15 +24,26 @@ import Logout from '@mui/icons-material/Logout';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CloseIcon from '@mui/icons-material/Close';
+import { styled } from '@mui/system';
+
+import { bgBlur } from '../../utils/cssStyles';
+
+
 
 const navItems = [{ label: 'Home', path: '/' }, { label: 'Services', path: '/services' }, {label: 'Businesses', path: '/Businesses' }, { label: 'About', path: '/about' }, { label: 'Contact', path: '/contact' }, { label: 'Blog', path: '/blog' }];
 const settings = [{ label: 'Profile', path: '/profile' }, { label: 'Dashboard', path: '/dashboard' }, { label: 'Settings', path: '/settings' }, { label: 'Logout', path: '/logout' }];
 
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+
+     ...bgBlur({ color: theme.palette.background.default }),
+     // boxShadow: 'none',
+
+}));
 const ResponsiveAppBar = (props) => {
      const [mobileOpen, setMobileOpen] = useState(false);
      const [anchorElUser, setAnchorElUser] = useState(null);
      const [isLoggedIn, setIsLoggedIn] = useState(false); // Mock login state
-     const [appBarBg, setAppBarBg] = useState('transparent'); // AppBar background state
+     const [appBarBg, setAppBarBg] = useState(''); // AppBar background state
      const [appBarShadow, setAppBarShadow] = useState('none'); // AppBar background state
 
 
@@ -60,10 +71,8 @@ const ResponsiveAppBar = (props) => {
                // if (window.scrollY > window.innerHeight) {
                if (window.scrollY > 20) {
 
-                    setAppBarBg('white'); // Set your minimal background color here
                     setAppBarShadow('')
                } else {
-                    setAppBarBg('transparent');
                     setAppBarShadow('none') 
                }
           };
@@ -118,7 +127,7 @@ const ResponsiveAppBar = (props) => {
      );
 
      return (
-          <AppBar position="fixed" sx={{ backgroundColor: appBarBg, /*transition: 'background-color 0.3s ease',*/ boxShadow: appBarShadow}}>
+          <StyledAppBar position="fixed" sx={{ boxShadow: appBarShadow}}>
                <Container maxWidth="xl">
                     <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                          <Typography
@@ -250,7 +259,7 @@ const ResponsiveAppBar = (props) => {
                          {drawer}
                     </Drawer>
                </nav>
-          </AppBar>
+          </StyledAppBar>
      );
 };
 
