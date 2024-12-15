@@ -47,7 +47,7 @@ export default function ShopProductCard({ product }) {
   };
 
   return (
-    <Card sx={{ borderRadius: 2, overflow: 'hidden', position: 'relative', maxWidth: 350 }}>
+    <Card sx={{ borderRadius: 2, overflow: 'hidden', position: 'relative', width: 350 }}>
       {/* Image with Navigation */}
       <Box sx={{ position: 'relative' }}>
         {product?.status && (
@@ -65,7 +65,7 @@ export default function ShopProductCard({ product }) {
             {product.status}
           </Label>
         )}
-        <StyledProductImg src={product.images[currentImageIndex]} alt={product.name} />
+        <StyledProductImg src={product.images[currentImageIndex]}  alt={product.name} />
         {/* Previous Button */}
         <IconButton
           onClick={handlePrevImage}

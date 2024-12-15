@@ -24,7 +24,7 @@ export default function LatestProjectsSection() {
 
   return (
 
-    <Container maxWidth="xl">
+    <Container maxWidth="xl" sx={{marginTop: '50px'}}>
       <Box sx={{display: "flex" , justifyContent: "space-between"}}>
       <SectionHeaderLeft
         title="Latest Projects"
@@ -32,7 +32,7 @@ export default function LatestProjectsSection() {
       />
       <SectionHeaderRight text="Explore New Projects" />
       </Box>
-      <ProjectList projects={projects} />
+      <ProjectList projects={projects} mt={5} />
       
     </Container>
   )

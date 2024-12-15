@@ -46,13 +46,13 @@ const ReviewSlider = () => {
         What they're saying about AreHare
       </Typography>
 
-      <Card sx={{ display: 'flex', width: '100%', position: 'relative' }}>
+      <Card sx={{ display: 'flex', width: '100%', position: 'relative', justifyContent: 'center', alignItems: 'center', padding: '30px' }}>
         {/* Left Side: Image */}
         <CardMedia
           component="img"
           image={imageSrc}
           alt={`${name} image`}
-          sx={{ width: '40%', objectFit: 'cover' }}
+          sx={{ width: '400px', height:'400px', objectFit: 'cover', borderRadius: '20px' }}
         />
 
         {/* Right Side: Text */}

@@ -3,7 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Navigation, Pagination } from 'swiper/modules';
+import "swiper/css/autoplay"; // Autoplay styles
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { Box, Card, CardContent, Typography, Avatar, Chip, Rating, Container, IconButton, Stack, Divider, Button } from '@mui/material';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LanguageIcon from '@mui/icons-material/Language';
@@ -114,6 +115,10 @@ const TopRatedFreelancers = () => {
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
+          autoplay={{
+            delay: 2000, // Delay in ms
+            disableOnInteraction: false, // Continue autoplay after interaction
+          }}
           pagination={{
             clickable: true,
             el: '.custom-pagination', // Assign a custom class
@@ -122,7 +127,7 @@ const TopRatedFreelancers = () => {
             prevEl: '.swiper-button-prev',
             nextEl: '.swiper-button-next',
           }}
-          modules={[Pagination, Navigation]}
+          modules={[Pagination, Navigation, Autoplay]}
           breakpoints={{
             640: { slidesPerView: 1 },
             768: { slidesPerView: 2 },

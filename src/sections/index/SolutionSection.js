@@ -12,14 +12,14 @@ import TranslateIcon from "@mui/icons-material/Translate";
 import CodeIcon from "@mui/icons-material/Code";
 import DataObjectIcon from "@mui/icons-material/DataObject";
 
-
-import SectionHeaderLeft from '../../components/section/SectionHeaderLeft';
+import SectionHeaderLeft from "../../components/section/SectionHeaderLeft";
 
 // Import Swiper and its CSS
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; // Base Swiper styles
 import "swiper/css/navigation"; // Navigation styles
-import { Navigation } from "swiper/modules";
+import "swiper/css/autoplay"; // Autoplay styles
+import { Navigation, Autoplay } from "swiper/modules"; // Import Autoplay module
 
 // Styled Card
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -50,46 +50,14 @@ const ArrowButton = styled(IconButton)(({ theme }) => ({
 
 export default function ServiceCategories() {
   const categories = [
-    {
-      title: "Programming & Tech",
-      services: "5 services",
-      icon: <CodeIcon fontSize="large" />,
-    },
-    {
-      title: "AI Solutions",
-      services: "3 services",
-      icon: <DataObjectIcon fontSize="large" />,
-    },
-    {
-      title: "Graphic & Design",
-      services: "3 services",
-      icon: <GraphicEqIcon fontSize="large" />,
-    },
-    {
-      title: "Video & Animation",
-      services: "4 services",
-      icon: <VideocamIcon fontSize="large" />,
-    },
-    {
-      title: "Finance & Accounting",
-      services: "4 services",
-      icon: <AccountBalanceIcon fontSize="large" />,
-    },
-    {
-      title: "Marketing & Sales",
-      services: "4 services",
-      icon: <CampaignIcon fontSize="large" />,
-    },
-    {
-      title: "Photography & Editor",
-      services: "4 services",
-      icon: <PhotoCameraIcon fontSize="large" />,
-    },
-    {
-      title: "Writing & Translation",
-      services: "4 services",
-      icon: <TranslateIcon fontSize="large" />,
-    },
+    { title: "Programming & Tech", services: "5 services", icon: <CodeIcon fontSize="large" /> },
+    { title: "AI Solutions", services: "3 services", icon: <DataObjectIcon fontSize="large" /> },
+    { title: "Graphic & Design", services: "3 services", icon: <GraphicEqIcon fontSize="large" /> },
+    { title: "Video & Animation", services: "4 services", icon: <VideocamIcon fontSize="large" /> },
+    { title: "Finance & Accounting", services: "4 services", icon: <AccountBalanceIcon fontSize="large" /> },
+    { title: "Marketing & Sales", services: "4 services", icon: <CampaignIcon fontSize="large" /> },
+    { title: "Photography & Editor", services: "4 services", icon: <PhotoCameraIcon fontSize="large" /> },
+    { title: "Writing & Translation", services: "4 services", icon: <TranslateIcon fontSize="large" /> },
   ];
 
   return (
@@ -103,12 +71,13 @@ export default function ServiceCategories() {
         borderRadius: "8px",
       }}
     >
-      <Box sx={{ display: "flex", alignContent: "center" ,alignItems: "center", justifyContent: "space-between" }}>
+      <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <SectionHeaderLeft
           title="Service Categories"
           subtitle="Explore the most popular service categories."
-          sx={{ textAlign: "left"}}
+          sx={{ textAlign: "left" }}
         />
+
         {/* Custom Navigation Buttons */}
         <div
           style={{
@@ -120,43 +89,28 @@ export default function ServiceCategories() {
           }}
         >
           <ArrowButton className="custom-swiper-button-prev">
-            <ChevronLeftIcon
-              sx={{
-                cursor: "pointer",
-                fontSize: 32,
-                "&:hover": { color: "gray" },
-              }}
-            />
+            <ChevronLeftIcon sx={{ cursor: "pointer", fontSize: 32, "&:hover": { color: "gray" } }} />
           </ArrowButton>
           <ArrowButton className="custom-swiper-button-next">
-            <ChevronRightIcon
-              sx={{
-                cursor: "pointer",
-                fontSize: 32,
-                "&:hover": { color: "gray" },
-              }}
-            />
+            <ChevronRightIcon sx={{ cursor: "pointer", fontSize: 32, "&:hover": { color: "gray" } }} />
           </ArrowButton>
         </div>
-
       </Box>
-
 
       {/* Swiper Slider */}
       <Swiper
-        slidesPerView={6} // Show 6 items per slide
+        slidesPerView={6}
         spaceBetween={30}
-        loop={true} // Enable looping
+        loop={true}
         autoplay={{
-          delay: 3000, // Set autoplay delay in milliseconds
-          disableOnInteraction: false, // Keep autoplay running even after user interaction
+          delay: 3000, // Delay in ms
+          disableOnInteraction: false, // Continue autoplay after interaction
         }}
         navigation={{
           nextEl: ".custom-swiper-button-next",
           prevEl: ".custom-swiper-button-prev",
         }}
-        modules={[Navigation]}
-        pagination={false} // Remove dots
+        modules={[Navigation, Autoplay]} // Add Autoplay here
         breakpoints={{
           1024: { slidesPerView: 4 },
           768: { slidesPerView: 3 },
@@ -167,7 +121,9 @@ export default function ServiceCategories() {
         {categories.map((category, index) => (
           <SwiperSlide key={index}>
             <StyledCard>
-              <Box mb={1} sx={{ color: 'gray' }}>{category.icon}</Box>
+              <Box mb={1} sx={{ color: "gray" }}>
+                {category.icon}
+              </Box>
               <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
                 {category.title}
               </Typography>
