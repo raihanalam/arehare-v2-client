@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Container, Typography, Box, IconButton, Card, CardContent, CardMedia } from '@mui/material';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+
 
 const reviews = [
   {
@@ -41,22 +43,40 @@ const ReviewSlider = () => {
       <Typography
         variant="h3"
         gutterBottom
-        sx={{ mt:10, mb:5, textAlign:'center' }}
+        sx={{ mt: 10, mb: 10, textAlign: 'center' }}
       >
         What they're saying about AreHare
       </Typography>
-
-      <Card sx={{ display: 'flex', width: '100%', position: 'relative', justifyContent: 'center', alignItems: 'center', padding: '30px' }}>
+      <Box
+        sx={{
+          position: 'absolute',
+          top: 200,
+          left: '50%',
+          transform: 'translateX(-50%)',
+          backgroundColor: 'primary.main',
+          color: 'white',
+          borderRadius: '50%',
+          width: 60,
+          height: 60,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 20
+        }}
+      >
+        <FormatQuoteIcon fontSize="large" />
+      </Box>
+      <Card sx={{ display: 'flex', width: '100%', position: 'relative', justifyContent: 'space-around', alignItems: 'center', padding: '30px' }}>
         {/* Left Side: Image */}
         <CardMedia
           component="img"
           image={imageSrc}
           alt={`${name} image`}
-          sx={{ width: '400px', height:'400px', objectFit: 'cover', borderRadius: '20px' }}
+          sx={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '20px' }}
         />
 
         {/* Right Side: Text */}
-        <CardContent sx={{ width: '60%', padding: '2rem', textAlign:'justify' }}>
+        <CardContent sx={{ width: '60%', padding: '2rem', textAlign: 'justify' }}>
           <Typography
             variant="h4"
             component="div"
@@ -77,12 +97,14 @@ const ReviewSlider = () => {
         {/* Previous Arrow */}
         <IconButton
           onClick={handlePrevReview}
-          sx={{  position: 'absolute',
+          sx={{
+            position: 'absolute',
             top: '50%',
-            left: 8,
+            left: 30,
             transform: 'translateY(-50%)',
             color: 'white',
-            backgroundColor: 'rgba(0,0,0,0.4)', }}
+            backgroundColor: 'rgba(0,0,0,0.4)',
+          }}
         >
           <ArrowBackIosIcon />
         </IconButton>
@@ -90,12 +112,14 @@ const ReviewSlider = () => {
         {/* Next Arrow */}
         <IconButton
           onClick={handleNextReview}
-          sx={{  position: 'absolute',
+          sx={{
+            position: 'absolute',
             top: '50%',
-            right: 8,
+            right: 30,
             transform: 'translateY(-50%)',
             color: 'white',
-            backgroundColor: 'rgba(0,0,0,0.4)', }}
+            backgroundColor: 'rgba(0,0,0,0.4)',
+          }}
         >
           <ArrowForwardIosIcon />
         </IconButton>

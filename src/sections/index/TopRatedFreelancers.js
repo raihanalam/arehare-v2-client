@@ -102,7 +102,7 @@ const freelancers = [
 const TopRatedFreelancers = () => {
   return (
     <Container maxWidth="xl">
-      <Box sx={{ mt: 4, px: 2 }}>
+      <Box sx={{ mt: 5, px: 2 }}>
 
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <SectionHeaderLeft
@@ -111,12 +111,12 @@ const TopRatedFreelancers = () => {
           />
           <SectionHeaderRight text="Explore All Freelancers" />
         </Box>
-
+        <Box sx={{mt: 5}}>
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
           autoplay={{
-            delay: 2000, // Delay in ms
+            delay: 4000, // Delay in ms
             disableOnInteraction: false, // Continue autoplay after interaction
           }}
           pagination={{
@@ -136,7 +136,7 @@ const TopRatedFreelancers = () => {
         >
           {freelancers.map((freelancer) => (
             <SwiperSlide key={freelancer.id}>
-              <Card sx={{ textAlign: 'left', p: 2, position: 'relative' }}>
+              <Card sx={{ textAlign: 'left', p: 2, position: 'relative', color: '#4d4d4d' }}>
                 <IconButton
                   sx={{
                     position: 'absolute',
@@ -205,7 +205,7 @@ const TopRatedFreelancers = () => {
                     />
                   ))}
                 </Box>
-                <Divider sx={{ my: 1 }} />
+                <Divider sx={{ my: 1, mt: 1 }} />
 
                 {/* Price and Button */}
                 <Stack direction="row" justifyContent="space-between" alignItems="center">
@@ -225,6 +225,7 @@ const TopRatedFreelancers = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+        </Box>
 
         {/* Custom Pagination Dots */}
         <Box sx={{
@@ -233,7 +234,7 @@ const TopRatedFreelancers = () => {
             height: '10px',
             backgroundColor: '#ccc', // Default color
             opacity: 1,
-            margin: '0 20px', // Spacing around dots
+            margin: '0 25px', // Spacing around dots
             borderRadius: '50%',
             transition: 'background-color 0.3s ease, transform 0.3s ease',
           },

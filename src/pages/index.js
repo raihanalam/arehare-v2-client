@@ -26,8 +26,9 @@ export default function HomePage() {
                <Navbar />
                <HeroSection />
                <SolutionsSection />
-               <ServiceSection />
                <TopRatedFreelancers/>
+               <ServiceSection />
+               
                <LatestProjectsSection />
                <HoverCardComponent/>
                <ReviewSlider/>

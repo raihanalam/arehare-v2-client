@@ -31,11 +31,6 @@ export default function BlogSection() {
                          <BlogPostCard key={post.id} post={post} index={index} />
                     ))}
                </Grid>
-
-               <Divider sx={{ mt: 3, mb: 3 }}>
-                    <Button variant="outlined" color="inherit" sx={{ color: 'black' }}>See More</Button>
-
-               </Divider>
           </Container>
      );
 }

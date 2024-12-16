@@ -64,7 +64,7 @@ export default function ServiceCategories() {
     <Container
       maxWidth="xl"
       sx={{
-        marginTop: 5,
+        mt: 5,
         position: "relative",
         backgroundColor: "#f9fafc",
         padding: "40px",
