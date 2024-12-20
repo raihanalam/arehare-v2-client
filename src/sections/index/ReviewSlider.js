@@ -45,7 +45,7 @@ const ReviewSlider = () => {
         gutterBottom
         sx={{ mt: 10, mb: 10, textAlign: 'center' }}
       >
-        What they're saying about AreHare
+        {'What they\'re saying about AreHare'}
       </Typography>
       <Box
         sx={{

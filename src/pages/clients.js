@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+// import { Helmet } from 'react-helmet-async';
 import { filter } from 'lodash';
 import { sentenceCase } from 'change-case';
 import { useState } from 'react';
@@ -148,9 +148,9 @@ export default function UserPage() {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title> User | Minimal UI </title>
-      </Helmet>
+      </Helmet> */}
 
       <Container>
         <Stack direction="row" alignItems="center" justifyContent="space-between" mb={5}>

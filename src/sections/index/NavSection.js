@@ -6,11 +6,6 @@ import Logo from '../../components/logo';
 import ResponsiveAppBar from '@/components/app-bar/ResponsiveAppBar';
 import { bgBlur } from '../../utils/cssStyles';
 
-
-
-
-
-
 // Styled Components
 const StyledNavBar = styled(AppBar)(({ theme }) => ({
 

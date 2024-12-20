@@ -25,52 +25,6 @@ const ArrowButton = styled(IconButton)(({ theme }) => ({
 const ProjectList = ({ projects }) => {
   return (
     <Box sx={{ position: 'relative', width: '100%' }}>
-      {/* Redesigned Navigation Buttons */}
-      <ArrowButton
-        className="custom2-swiper-button-prev"
-        sx={{
-          position: 'absolute',
-          top: '105%',
-          left: 10,
-          zIndex: 10,
-          transform: 'translateY(-50%)',
-          backgroundColor: '#ffffff',
-          boxShadow: 2,
-          border: '1px solid #ddd',
-          '&:hover': {
-            backgroundColor: '#f9f9f9',
-          },
-        }}
-      >
-        <ArrowLeftIcon sx={{
-          cursor: "pointer",
-          fontSize: 32,
-          "&:hover": { color: "gray" },
-        }} />
-      </ArrowButton>
-      <ArrowButton
-        className="custom2-swiper-button-next"
-        sx={{
-          position: 'absolute',
-          top: '105%',
-          right: 10,
-          zIndex: 10,
-          transform: 'translateY(-50%)',
-          backgroundColor: '#ffffff',
-          boxShadow: 2,
-          border: '1px solid #ddd',
-          '&:hover': {
-            backgroundColor: '#f9f9f9',
-          },
-        }}
-      >
-        <ArrowRightIcon sx={{
-          cursor: "pointer",
-          fontSize: 32,
-          "&:hover": { color: "gray" },
-        }} />
-      </ArrowButton>
-
       {/* Swiper Component */}
       <Swiper
         modules={[Navigation]} // Pass Navigation module here
@@ -104,6 +58,55 @@ const ProjectList = ({ projects }) => {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      <Box>
+        {/* Redesigned Navigation Buttons */}
+        <ArrowButton
+          className="custom2-swiper-button-prev"
+          sx={{
+            position: 'absolute',
+            top: '110%',
+            left: 10,
+            zIndex: 10,
+            transform: 'translateY(-50%)',
+            backgroundColor: '#ffffff',
+            boxShadow: 2,
+            border: '1px solid #ddd',
+            '&:hover': {
+              backgroundColor: '#f9f9f9',
+            },
+          }}
+        >
+          <ArrowLeftIcon sx={{
+            cursor: "pointer",
+            fontSize: 32,
+            "&:hover": { color: "gray" },
+          }} />
+        </ArrowButton>
+        <ArrowButton
+          className="custom2-swiper-button-next"
+          sx={{
+            position: 'absolute',
+            top: '110%',
+            right: 10,
+            zIndex: 10,
+            transform: 'translateY(-50%)',
+            backgroundColor: '#ffffff',
+            boxShadow: 2,
+            border: '1px solid #ddd',
+            '&:hover': {
+              backgroundColor: '#f9f9f9',
+            },
+          }}
+        >
+          <ArrowRightIcon sx={{
+            cursor: "pointer",
+            fontSize: 32,
+            "&:hover": { color: "gray" },
+          }} />
+        </ArrowButton>
+
+      </Box>
     </Box>
   );
 };

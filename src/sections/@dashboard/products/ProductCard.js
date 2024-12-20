@@ -7,6 +7,8 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import Rating from '@mui/material/Rating';
 import { fCurrency } from '../../../utils/formatNumber';
 import Label from '../../../components/label';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
 
 // Styled components
 const StyledProductImg = styled('img')({
@@ -17,7 +19,7 @@ const StyledProductImg = styled('img')({
   '&:hover': {
     transform: 'scale(1.05)', // Slight zoom on hover
   },
-  
+
 });
 
 
@@ -47,7 +49,7 @@ export default function ShopProductCard({ product }) {
   };
 
   return (
-    <Card sx={{ borderRadius: 2, overflow: 'hidden', position: 'relative', width: 350 }}>
+    <Card sx={{ borderRadius: 2, overflow: 'hidden', position: 'relative', width: 350, maxWidth: '100%' }}>
       {/* Image with Navigation */}
       <Box sx={{ position: 'relative' }}>
         {product?.status && (
@@ -57,7 +59,7 @@ export default function ShopProductCard({ product }) {
             sx={{
               zIndex: 9,
               top: 16,
-              right: 16,
+              left: 16,
               position: 'absolute',
               textTransform: 'uppercase',
             }}
@@ -65,7 +67,22 @@ export default function ShopProductCard({ product }) {
             {product.status}
           </Label>
         )}
-        <StyledProductImg src={product.images[currentImageIndex]}  alt={product.name} />
+        <StyledProductImg src={product.images[currentImageIndex]} alt={product.name} />
+        {/* Favorite Icon */}
+        <IconButton
+          size="small"
+          sx={{
+            position: 'absolute',
+            top: 10,
+            right: 10,
+            color: 'white',
+            backgroundColor: 'rgba(0,0,0,0.4)',
+            borderRadius: '50%',
+            boxShadow: 3,
+          }}
+        >
+          <FavoriteBorderIcon />
+        </IconButton>
         {/* Previous Button */}
         <IconButton
           onClick={handlePrevImage}
@@ -100,7 +117,9 @@ export default function ShopProductCard({ product }) {
       <Stack spacing={2} sx={{ p: 2 }}>
         {/* Service Title */}
         <Link color="inherit" underline="hover">
-          <Typography variant="subtitle1" noWrap sx={{ fontWeight: 600 }}>
+          <Typography variant="subtitle4"
+            fontWeight="bold"
+            sx={{ mb: 1, mt: 2, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
             {product.name}
           </Typography>
         </Link>

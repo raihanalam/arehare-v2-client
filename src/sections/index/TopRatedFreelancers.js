@@ -23,7 +23,7 @@ const freelancers = [
     rating: 4.3,
     price: '$200/day',
     tags: ['Recruitment', 'Supporter'],
-    avatar: '/path-to-avatar1.jpg',
+    avatar: '/assets/images/avatars/avatar_1.jpg',
     location: 'New York, USA',
     languages: 'English, Spanish',
     intro: 'Passionate about supporting teams.',
@@ -35,7 +35,7 @@ const freelancers = [
     rating: 4.8,
     price: '$450/month',
     tags: ['Developer', 'Software'],
-    avatar: '/path-to-avatar2.jpg',
+    avatar: '/assets/images/avatars/avatar_2.jpg',
     location: 'San Francisco, USA',
     languages: 'English, French',
     intro: 'Building beautiful user interfaces.',
@@ -47,7 +47,7 @@ const freelancers = [
     rating: 4.0,
     price: '$21/hr',
     tags: ['Media Editor', 'UI/UX Design'],
-    avatar: '/path-to-avatar3.jpg',
+    avatar: '/assets/images/avatars/avatar_3.jpg',
     location: 'London, UK',
     languages: 'English, Italian',
     intro: 'Creative thinker and problem solver.',
@@ -59,7 +59,7 @@ const freelancers = [
     rating: 4.5,
     price: '$60/day',
     tags: ['Recruitment', 'Software'],
-    avatar: '/path-to-avatar4.jpg',
+    avatar: '/assets/images/avatars/avatar_4.jpg',
     location: 'Los Angeles, USA',
     languages: 'English, German',
     intro: 'Experienced in recruitment processes.',
@@ -72,7 +72,7 @@ const freelancers = [
     rating: 4.0,
     price: '$21/hr',
     tags: ['Media Editor', 'UI/UX Design'],
-    avatar: '/path-to-avatar3.jpg',
+    avatar: '/assets/images/avatars/avatar_5.jpg',
     location: 'New York, USA',
     languages: 'English, Spanish',
     intro: 'Creative thinker and problem solver.',
@@ -84,7 +84,7 @@ const freelancers = [
     rating: 4.5,
     price: '$60/day',
     tags: ['Recruitment', 'Software'],
-    avatar: '/path-to-avatar4.jpg',
+    avatar: '/assets/images/avatars/avatar_6.jpg',
     location: 'Los Angeles, USA',
     languages: 'English, German',
     intro: 'Experienced in recruitment processes.',
@@ -102,7 +102,7 @@ const freelancers = [
 const TopRatedFreelancers = () => {
   return (
     <Container maxWidth="xl">
-      <Box sx={{ mt: 5, px: 2 }}>
+      <Box sx={{ mt: 5 }}>
 
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <SectionHeaderLeft

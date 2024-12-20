@@ -60,8 +60,8 @@ const ImageGallery = ({ }) => {
         <CardMedia
           component="img"
           image={images[currentIndex]}
-          height={600}
-          alt="Service Image"
+          width={16} // Aspect ratio
+          height={9}          alt="Service Image"
           sx={{
             transition: 'transform 0.5s ease-in-out',
           }}

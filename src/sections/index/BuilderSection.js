@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button, AvatarGroup, Avatar, Container } from '@mui/material';
 import { styled } from '@mui/system';
+import Image from 'next/image';
 
 const SectionContainer = styled(Box)(({ theme }) => ({
   backgroundColor: '#004d40', // Dark Green background for aesthetic appeal
@@ -81,7 +82,7 @@ const BuilderSection = () => {
 
         {/* Image and Floating Box Section */}
         <ImageContent>
-          <img
+          <Image
             src="assets/images/products/service-24.jpg"
             alt="AI Builder Example"
             style={{ width: '100%', borderRadius: '8px' }}

@@ -94,4 +94,6 @@ Logo.propTypes = {
   disabledLink: PropTypes.bool,
 };
 
+Logo.displayName = 'Logo'
+
 export default Logo;

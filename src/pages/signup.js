@@ -1,4 +1,4 @@
-// import Image from 'next/image';
+import Image from 'next/image';
 import Head from 'next/head';
 
 
@@ -62,7 +62,7 @@ export default function SignupPage() {
                               <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
                                    Hi, Welcome Back
                               </Typography>
-                              <img src="/assets/illustrations/illustration_login.png" alt="login" />
+                              <Image src="/assets/illustrations/illustration_login.png" alt="login" />
                          </StyledSection>
                     )}
 

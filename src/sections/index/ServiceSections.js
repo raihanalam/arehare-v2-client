@@ -35,7 +35,7 @@ export default function ServiceSection() {
 
           <Container maxWidth="xl">
 
-               <Box sx={{ display: "flex", alignContent: 'center', alignItems: "center", justifyContent: "space-between" }}>
+               <Box mt={5} sx={{ display: "flex", alignContent: 'center', alignItems: "center", justifyContent: "space-between" }}>
                     <SectionHeaderLeft
                          title="Featured Services"
                          subtitle="Explore the most demandig services."

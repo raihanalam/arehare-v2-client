@@ -150,8 +150,8 @@ const ResponsiveAppBar = (props) => {
                          </Typography>
 
                          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
-                              {navItems.map((page) => (
-                                   <Link href={page.path} passHref key={page.label} legacyBehavior>
+                              {navItems.map((page, index) => (
+                                   <Link href={page.path} passHref key={index} legacyBehavior>
                                         <Button sx={{ my: 2, color: '#444444', display: 'block' }}>
                                              {page.label}
                                         </Button>
@@ -202,8 +202,8 @@ const ResponsiveAppBar = (props) => {
                                              transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                                              anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                                         >
-                                             {settings.map((setting) => (
-                                                  <Link href={setting.path} passHref legacyBehavior>
+                                             {settings.map((setting, index) => (
+                                                  <Link key={index} href={setting.path} passHref legacyBehavior>
                                                        <MenuItem key={setting.label} onClick={handleCloseUserMenu}>
                                                             <ListItemIcon>
                                                                  {setting.label === 'Profile' && <AccountCircleIcon fontSize="small" />}

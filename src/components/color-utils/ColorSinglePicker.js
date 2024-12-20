@@ -34,4 +34,6 @@ ColorSinglePicker.propTypes = {
   colors: PropTypes.arrayOf(PropTypes.string),
 };
 
+ColorSinglePicker.displayName = "ColorSinglePicker";
 export default ColorSinglePicker;
+

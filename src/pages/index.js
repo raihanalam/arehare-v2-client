@@ -28,7 +28,6 @@ export default function HomePage() {
                <SolutionsSection />
                <TopRatedFreelancers/>
                <ServiceSection />
-               
                <LatestProjectsSection />
                <HoverCardComponent/>
                <ReviewSlider/>

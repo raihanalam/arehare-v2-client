@@ -3,6 +3,7 @@ import { set, sub } from 'date-fns';
 import { noCase } from 'change-case';
 import { faker } from '@faker-js/faker';
 import { useState } from 'react';
+import Image from 'next/image';
 // @mui
 import {
   Box,
@@ -247,30 +248,30 @@ function renderContent(notification) {
 
   if (notification.type === 'order_placed') {
     return {
-      avatar: <img alt={notification.title} src="/assets/icons/ic_notification_package.svg" />,
+      avatar: <Image alt={notification.title} src="/assets/icons/ic_notification_package.svg" />,
       title,
     };
   }
   if (notification.type === 'order_shipped') {
     return {
-      avatar: <img alt={notification.title} src="/assets/icons/ic_notification_shipping.svg" />,
+      avatar: <Image alt={notification.title} src="/assets/icons/ic_notification_shipping.svg" />,
       title,
     };
   }
   if (notification.type === 'mail') {
     return {
-      avatar: <img alt={notification.title} src="/assets/icons/ic_notification_mail.svg" />,
+      avatar: <Image alt={notification.title} src="/assets/icons/ic_notification_mail.svg" />,
       title,
     };
   }
   if (notification.type === 'chat_message') {
     return {
-      avatar: <img alt={notification.title} src="/assets/icons/ic_notification_chat.svg" />,
+      avatar: <Image alt={notification.title} src="/assets/icons/ic_notification_chat.svg" />,
       title,
     };
   }
   return {
-    avatar: notification.avatar ? <img alt={notification.title} src={notification.avatar} /> : null,
+    avatar: notification.avatar ? <Image alt={notification.title} src={notification.avatar} /> : null,
     title,
   };
 }

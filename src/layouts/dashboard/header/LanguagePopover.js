@@ -2,7 +2,7 @@ import { useState } from 'react';
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Box, MenuItem, Stack, IconButton, Popover } from '@mui/material';
-
+import Image from 'next/image';
 // ----------------------------------------------------------------------
 
 const LANGS = [
@@ -24,7 +24,6 @@ const LANGS = [
 ];
 
 // ----------------------------------------------------------------------
-
 export default function LanguagePopover() {
   const [open, setOpen] = useState(null);
 
@@ -49,7 +48,7 @@ export default function LanguagePopover() {
           }),
         }}
       >
-        <img src={LANGS[0].icon} alt={LANGS[0].label} />
+        <Image src={LANGS[0].icon} alt={LANGS[0].label} />
       </IconButton>
 
       <Popover
