@@ -38,10 +38,11 @@ const CardContent = styled(Box)({
   bottom: 0,
   left: 0,
   right: 0,
+  padding: '50px 0',
   backgroundColor: 'rgba(0, 0, 0, 0.6)',
   color: 'white',
   textAlign: 'center',
-  padding: '140px',
+  // padding: '140px',
   opacity: 0,
   transform: 'translateY(100%)',
   transition: 'opacity 0.3s ease-in-out, transform 0.3s ease-in-out',
@@ -88,14 +89,12 @@ const HoverCardComponent = () => {
       </Typography>
       <CardContainer>
         {portfolioCards.map((card, index) => (
-          <a key={index} href={card.link} style={{ textDecoration: 'none' }}>
             <Card>
               <Image src={card.src} alt={card.title} />
               <CardContent className="card-content">
                 <Typography variant="h6">{card.title}</Typography>
               </CardContent>
             </Card>
-          </a>
         ))}
       </CardContainer>
     </Container>

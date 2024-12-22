@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { Box, Card, Typography, Stack, Avatar, IconButton, Link } from '@mui/material';
+import { Box, Card, Typography, Stack, Avatar, IconButton, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -8,6 +8,7 @@ import Rating from '@mui/material/Rating';
 import { fCurrency } from '../../../utils/formatNumber';
 import Label from '../../../components/label';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import Link from 'next/link';
 
 
 // Styled components
@@ -29,6 +30,15 @@ const StyledAvatar = styled(Avatar)({
   border: '2px solid #fff',
 });
 
+const StyledCard = styled(Card)(({ theme }) => ({
+  boxShadow: theme.shadows[1],
+  "&:hover": {
+    transform: "scale(1.01)",
+    boxShadow: theme.shadows[6],
+  },
+  transition: "transform 0.3s ease-in-out",
+}));
+
 // ----------------------------------------------------------------------
 
 ShopProductCard.propTypes = {
@@ -49,7 +59,7 @@ export default function ShopProductCard({ product }) {
   };
 
   return (
-    <Card sx={{ borderRadius: 2, overflow: 'hidden', position: 'relative', width: 350, maxWidth: '100%' }}>
+    <StyledCard sx={{ borderRadius: 2, overflow: 'hidden', position: 'relative', width: 350, maxWidth: '100%' }}>
       {/* Image with Navigation */}
       <Box sx={{ position: 'relative' }}>
         {product?.status && (
@@ -116,13 +126,33 @@ export default function ShopProductCard({ product }) {
       {/* Service Information */}
       <Stack spacing={2} sx={{ p: 2 }}>
         {/* Service Title */}
-        <Link color="inherit" underline="hover">
-          <Typography variant="subtitle4"
+        <Link href="/service-details" passHref legacyBehavior>
+          <Typography
+            variant="subtitle1"
             fontWeight="bold"
-            sx={{ mb: 1, mt: 2, fontSize: { xs: '1rem', sm: '1.25rem' } }}>
+            sx={{
+              mb: 1,
+              mt: 2,
+              fontSize: { xs: '1rem', sm: '1rem' },
+              color: 'black',
+              cursor: 'pointer',
+              lineHeight: '1.5', // Adjust to control spacing between lines
+              height: '3rem', // Ensures two lines of height
+              overflow: 'hidden', // Prevents extra content from showing
+              display: '-webkit-box', // Enables webkit box model for line control
+              WebkitBoxOrient: 'vertical',
+              WebkitLineClamp: 2, // Ensures the content does not exceed 2 lines
+              textAlign: 'left', // Ensures consistent alignment
+              '&:hover': {
+                textDecoration: 'underline',
+              },
+            }}
+          >
             {product.name}
           </Typography>
         </Link>
+
+
 
         {/* User Avatar, Ratings and Count */}
 
@@ -139,17 +169,17 @@ export default function ShopProductCard({ product }) {
               </Typography>
             </Stack>
           </Stack>
-
-
         </Stack>
-
-
-
+        <Divider />
         {/* Service Price */}
-        <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-          Starts from {fCurrency(product.price)}
-        </Typography>
+        <Box sx={{}} >
+          <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+            Starts from {fCurrency(product.price)}
+          </Typography>
+        </Box>
       </Stack>
-    </Card>
+
+
+    </StyledCard>
   );
 }

@@ -18,17 +18,17 @@ const Header = () => (
          <Typography variant="h3">I will craft engaging social media marketing, copywriting</Typography>
    
          <Box display="flex" gap={2} mt={1} sx={{ color: 'gray' }}>
-           <Typography variant="body1" color="text.secondary">
+           <Typography variant="body6" color="text.secondary">
              By Kianna Bie
            </Typography>
-           <Typography variant="body1" display="flex" alignItems="center" >
+           <Typography variant="body6" display="flex" alignItems="center" >
              <Star sx={{ mr: '5px' }} />
              4.8 (50 ratings)
            </Typography>
-           <Typography variant="body1" display="flex" alignItems="center" >
+           <Typography variant="body6" display="flex" alignItems="center" >
              <StreetviewIcon sx={{ marginRight: '5px' }} /> 1.2k views
            </Typography>
-           <Typography variant="body1" display="flex" alignItems="center">
+           <Typography variant="body6" display="flex" alignItems="center">
              <ReceiptIcon sx={{ marginRight: '5px' }} />120 sales</Typography>
          </Box>
        </Box>

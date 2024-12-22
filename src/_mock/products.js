@@ -4,7 +4,7 @@ import { sample } from 'lodash';
 // ----------------------------------------------------------------------
 
 const PRODUCT_NAME = [
-  "Custom Website Design & Development",
+  "Custom Website Design & Development Custom Website Design & Development Custom Website Design & Development",
   "Mobile App Development (iOS/Android)",
   "Full-Stack Web Application Development",
   "SEO & Digital Marketing Strategy",

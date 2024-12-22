@@ -67,7 +67,7 @@ const ProjectCard = ({ project }) => (
         <Typography
           variant="subtitle2"
           fontWeight="bold"
-          sx={{ mb: 1, mt:3, fontSize: { xs: '1rem', sm: '1.25rem' } }}
+          sx={{ mb: 1, mt:3, fontSize: { xs: '1rem', sm: '1rem' } }}
         >
           {project.title}
         </Typography>

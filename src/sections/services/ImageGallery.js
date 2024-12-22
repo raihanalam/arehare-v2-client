@@ -29,6 +29,9 @@ import {
   ZoomOut,
 } from '@mui/icons-material';
 
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 const ImageGallery = ({ }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fullScreen, setFullScreen] = useState(false);
@@ -60,8 +63,9 @@ const ImageGallery = ({ }) => {
         <CardMedia
           component="img"
           image={images[currentIndex]}
-          width={16} // Aspect ratio
-          height={9}          alt="Service Image"
+          width={"100%"} // Aspect ratio
+          height={"600px"}
+          alt="Service Image"
           sx={{
             transition: 'transform 0.5s ease-in-out',
           }}
@@ -81,7 +85,7 @@ const ImageGallery = ({ }) => {
             color: 'white',
           }}
         >
-          <ArrowBackIos />
+          <ArrowBackIosNewIcon />
         </IconButton>
 
         <IconButton
@@ -98,7 +102,7 @@ const ImageGallery = ({ }) => {
             color: 'white',
           }}
         >
-          <ArrowForwardIos />
+          <ArrowForwardIosIcon />
         </IconButton>
       </Card>
 
@@ -108,7 +112,7 @@ const ImageGallery = ({ }) => {
           <Card
             key={index}
             sx={{
-              width: 140,
+              width: "100%",
               height: 100,
               cursor: 'pointer',
               border: currentIndex === index ? '1px solid #1976d2' : 'none',
@@ -116,7 +120,7 @@ const ImageGallery = ({ }) => {
             }}
             onClick={() => handleThumbnailClick(index)}
           >
-            <Image src={img} width={140} height={100} alt={`Thumbnail ${index}`} />
+            <Image src={img} width={200} height={100} alt={`Thumbnail ${index}`} />
           </Card>
         ))}
       </Box>

@@ -7,20 +7,13 @@ import ResponsiveAppBar from '@/components/app-bar/ResponsiveAppBar';
 import { bgBlur } from '../../utils/cssStyles';
 
 // Styled Components
-const StyledNavBar = styled(AppBar)(({ theme }) => ({
 
-     ...bgBlur({ color: theme.palette.background.default }),
-     boxShadow: 'none',
-
-}));
 
 // Navbar Component
 export default function Navbar() {
      const isMobile = useResponsive('down', 'md');
 
      return (
-          <StyledNavBar>
-               <ResponsiveAppBar/>
-          </StyledNavBar>
+          <ResponsiveAppBar />
      );
 }

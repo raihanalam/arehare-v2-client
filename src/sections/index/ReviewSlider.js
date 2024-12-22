@@ -4,6 +4,8 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
 
+import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
+
 
 const reviews = [
   {
@@ -106,7 +108,7 @@ const ReviewSlider = () => {
             backgroundColor: 'rgba(0,0,0,0.4)',
           }}
         >
-          <ArrowBackIosIcon />
+          <ArrowBackIosNewIcon />
         </IconButton>
 
         {/* Next Arrow */}

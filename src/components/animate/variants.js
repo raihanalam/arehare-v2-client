@@ -1,5 +1,5 @@
 // Animation Variants
-const containerVariants = {
+export const containerVariants = {
      hidden: { opacity: 0 },
      visible: {
        opacity: 1,
@@ -10,7 +10,7 @@ const containerVariants = {
      },
    };
    
-   const itemVariants = {
+   export const itemVariants = {
      hidden: { opacity: 0, y: 50 },
      visible: {
        opacity: 1,
@@ -22,7 +22,7 @@ const containerVariants = {
      },
    };
    
-   const searchBarVariants = {
+   export const searchBarVariants = {
      hidden: { opacity: 0, scale: 0.9 },
      visible: {
        opacity: 1,

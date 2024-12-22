@@ -30,7 +30,7 @@ import { bgBlur } from '../../utils/cssStyles';
 
 
 
-const navItems = [{ label: 'Home', path: '/' }, { label: 'Services', path: '/services' }, {label: 'Businesses', path: '/Businesses' }, { label: 'About', path: '/about' }, { label: 'Contact', path: '/contact' }, { label: 'Blog', path: '/blog' }];
+const navItems = [{ label: 'Home', path: '/' }, { label: 'Services', path: '/services' }, { label: 'Businesses', path: '/Businesses' }, { label: 'About', path: '/about' }, { label: 'Contact', path: '/contact' }, { label: 'Blog', path: '/blog' }];
 const settings = [{ label: 'Profile', path: '/profile' }, { label: 'Dashboard', path: '/dashboard' }, { label: 'Settings', path: '/settings' }, { label: 'Logout', path: '/logout' }];
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
@@ -73,7 +73,7 @@ const ResponsiveAppBar = (props) => {
 
                     setAppBarShadow('')
                } else {
-                    setAppBarShadow('none') 
+                    setAppBarShadow('none')
                }
           };
 
@@ -95,7 +95,7 @@ const ResponsiveAppBar = (props) => {
                               <Link href={item.path} passHref legacyBehavior>
                                    <ListItemButton sx={{ textAlign: 'center' }}>
                                         <ListItemText primary={item.label} />
-                                   </ListItemButton> 
+                                   </ListItemButton>
                               </Link>
                          </ListItem>
                     ))}
@@ -111,7 +111,7 @@ const ResponsiveAppBar = (props) => {
                     ) : (
                          <>
                               <Link href="/login" passHref >
-                                   <Button variant="outlined" sx={{ my: 1, mr: 2}}>
+                                   <Button variant="outlined" sx={{ my: 1, mr: 2 }}>
                                         Signin
                                    </Button>
                               </Link>
@@ -127,7 +127,7 @@ const ResponsiveAppBar = (props) => {
      );
 
      return (
-          <StyledAppBar position="fixed" sx={{ boxShadow: appBarShadow}}>
+          <StyledAppBar position="fixed" sx={{ boxShadow: appBarShadow }}>
                <Container maxWidth="xl">
                     <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                          <Typography
@@ -143,7 +143,7 @@ const ResponsiveAppBar = (props) => {
                                    // fontStyle: 'italic',
                                    color: 'inherit',
                                    textDecoration: 'none',
-                                   color:'#444444'
+                                   color: '#444444'
                               }}
                          >
                               AreHare
@@ -243,22 +243,23 @@ const ResponsiveAppBar = (props) => {
                          </Box>
                     </Toolbar>
                </Container>
-               <nav>
-                    <Drawer
-                         container={props.window !== undefined ? () => props.window().document.body : undefined}
-                         anchor="right"
-                         variant="persistent"
-                         open={mobileOpen}
-                         onClose={handleDrawerToggle}
-                         ModalProps={{ keepMounted: true }}
-                         sx={{
-                              display: { xs: 'block', sm: 'none' },
-                              '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
-                         }}
-                    >
-                         {drawer}
-                    </Drawer>
-               </nav>
+               {/* <nav> */}
+               <Drawer
+                    container={props.window !== undefined ? () => props.window().document.body : undefined}
+                    anchor="right"
+                    variant="temporary" // Use 'temporary' for standard mobile drawer behavior
+                    open={mobileOpen}
+                    onClose={handleDrawerToggle}
+                    ModalProps={{ keepMounted: true }}
+                    sx={{
+                         display: { xs: 'block', sm: 'none' }, // Ensure visibility on mobile
+                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
+                    }}
+               >
+                   {drawer}
+               </Drawer>
+
+               {/* </nav> */}
           </StyledAppBar>
      );
 };

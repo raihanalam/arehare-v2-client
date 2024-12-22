@@ -45,11 +45,6 @@ export default function ServiceSection() {
 
 
                <ProductList products={productsData} />
-               <Divider sx={{ mt: 3, mb: 3 }}>
-                    <Button variant="outlined" color="inherit" sx={{ color: 'black' }}>See More</Button>
-
-               </Divider>
-               {/* <ProductCartWidget /> */}
           </Container>
      );
 }
