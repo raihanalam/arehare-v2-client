@@ -55,14 +55,12 @@ export default function LoginPage() {
                </Head>
 
                <StyledRoot>
-
-
                     {mdUp && (
                          <StyledSection>
                               <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
                                    Hi, Welcome Back
                               </Typography>
-                              <Image src="/assets/illustrations/illustration_login.png" alt="login" />
+                              <Image src="/assets/illustrations/illustration_login.png" alt="login" height={300} width={400}/>
                          </StyledSection>
                     )}
 

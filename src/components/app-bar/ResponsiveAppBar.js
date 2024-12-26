@@ -27,6 +27,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { styled } from '@mui/system';
 
 import { bgBlur } from '../../utils/cssStyles';
+import Image from 'next/image';
 
 
 
@@ -128,33 +129,35 @@ const ResponsiveAppBar = (props) => {
 
      return (
           <StyledAppBar position="fixed" sx={{ boxShadow: appBarShadow }}>
-               <Container maxWidth="xl">
+               <Container maxWidth="xxl">
                     <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                         <Typography
-                              variant="h3"
-                              noWrap
-                              component="a"
-                              href="/"
-                              sx={{
-                                   mr: 2,
-                                   fontFamily: 'monospace',
-                                   fontWeight: 700,
-                                   letterSpacing: '.3rem',
-                                   // fontStyle: 'italic',
-                                   color: 'inherit',
-                                   textDecoration: 'none',
-                                   color: '#444444'
-                              }}
-                         >
-                              AreHare
-                         </Typography>
+                         <Link href={'/'} passHref legacyBehavior>
+                              <Box display={'flex'} alignItems={'center'}>
+                                   <Image src={'/logo/logo.png'} width={50} height={50} />
+                                   <Typography
+                                        variant="h3"
+                                        noWrap
+                                        sx={{
+                                             ml: 1,
+                                             fontFamily: 'monospace',
+                                             fontWeight: 700,
+                                             letterSpacing: '.3rem',
+                                             // fontStyle: 'italic',
+                                             color: 'inherit',
+                                             color: '#444444'
+                                        }}
+                                   >
+                                        arehare
+                                   </Typography>
+                              </Box>
+                         </Link>
 
                          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
                               {navItems.map((page, index) => (
                                    <Link href={page.path} passHref key={index} legacyBehavior>
-                                        <Button sx={{ my: 2, color: '#444444', display: 'block' }}>
+                                        <Typography sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer' }}>
                                              {page.label}
-                                        </Button>
+                                        </Typography>
                                    </Link>
                               ))}
                          </Box>
@@ -256,7 +259,7 @@ const ResponsiveAppBar = (props) => {
                          '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240 },
                     }}
                >
-                   {drawer}
+                    {drawer}
                </Drawer>
 
                {/* </nav> */}

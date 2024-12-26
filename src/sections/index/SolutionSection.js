@@ -73,7 +73,7 @@ export default function ServiceCategories() {
       <Container
         maxWidth="xl"
         sx={{
-          mt: 5,
+          mt: 2,
           position: "relative",
           backgroundColor: "#f9fafc",
           padding: "40px",
@@ -137,7 +137,7 @@ export default function ServiceCategories() {
                 <Box mb={1} sx={{ color: "gray" }}>
                   {category.icon}
                 </Box>
-                <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
+                <Typography variant="subtitle3">
                   {category.title}
                 </Typography>
                 <Typography variant="body2" sx={{ color: "text.secondary" }}>

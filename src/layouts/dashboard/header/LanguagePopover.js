@@ -48,7 +48,7 @@ export default function LanguagePopover() {
           }),
         }}
       >
-        <Image src={LANGS[0].icon} alt={LANGS[0].label} />
+        <Image src={LANGS[0].icon} alt={LANGS[0].label} width={20} height={20} />
       </IconButton>
 
       <Popover
