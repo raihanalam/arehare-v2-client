@@ -1,37 +1,55 @@
 import React, { useState, useEffect } from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Tooltip from '@mui/material/Tooltip';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Drawer from '@mui/material/Drawer';
-import Divider from '@mui/material/Divider';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
-import Link from 'next/link';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import Settings from '@mui/icons-material/Settings';
-import Logout from '@mui/icons-material/Logout';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import CloseIcon from '@mui/icons-material/Close';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Button,
+  Container,
+  Avatar,
+  Tooltip,
+  Menu,
+  MenuItem,
+  Drawer,
+  Divider,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  ListItemIcon,
+} from '@mui/material';
+import {
+  Menu as MenuIcon,
+  Close as CloseIcon,
+  Settings,
+  Logout,
+  Dashboard as DashboardIcon,
+  AccountCircle as AccountCircleIcon,
+  KeyboardArrowDown as KeyboardArrowDownIcon,
+} from '@mui/icons-material';
 import { styled } from '@mui/system';
-
-import { bgBlur } from '../../utils/cssStyles';
+import Link from 'next/link';
 import Image from 'next/image';
+import { bgBlur } from '../../utils/cssStyles';
 
 
 
-const navItems = [{ label: 'Home', path: '/' }, { label: 'Services', path: '/services' }, { label: 'Businesses', path: '/Businesses' }, { label: 'About', path: '/about' }, { label: 'Contact', path: '/contact' }, { label: 'Blog', path: '/blog' }];
+
+
+const navItems = [{ label: 'Home', path: '/' }, {
+     label: 'Services', path: '/services', subItems: [
+          { label: 'AI Solutions', path: '/services/aii-solution' },
+          { label: 'Programming & Tech', path: '/services/web-development' },
+          { label: 'Graphic & Design', path: '/services/app-development' },
+          { label: 'Video & Animation', path: '/services/digital-marketing' },
+          { label: 'Photography & Editor', path: '/services/digital-marketing' },
+          { label: 'Finance & Accounting', path: '/services/digital-marketing' },
+          { label: 'Video & Animations', path: '/services/digital-marketing' },
+          { label: 'Marketing & Sales', path: '/services/digital-marketing' },
+          { label: 'Writing & Translations', path: '/services/digital-marketing' },
+     ],
+}, { label: 'Businesses', path: '/Businesses' }, { label: 'About', path: '/about' }, { label: 'Contact', path: '/contact' }, { label: 'Blog', path: '/blog' }];
 const settings = [{ label: 'Profile', path: '/profile' }, { label: 'Dashboard', path: '/dashboard' }, { label: 'Settings', path: '/settings' }, { label: 'Logout', path: '/logout' }];
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
@@ -40,12 +58,51 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
      // boxShadow: 'none',
 
 }));
+
+// Dropdown Container Styles
+const Dropdown = styled(Box)(({ theme }) => ({
+     position: 'absolute',
+     top: '100%',
+     left: 0,
+     background: theme.palette.background.paper,
+     boxShadow: theme.shadows[3],
+     padding: theme.spacing(2),
+     borderRadius: theme.shape.borderRadius,
+     display: 'none',
+     zIndex: 10,
+     transition: 'opacity 0.3s ease, transform 0.3s ease',
+     opacity: 0,
+     transform: 'translateY(-10px)',
+     '&::before': {
+       content: '""',
+       position: 'absolute',
+       top: '-10px',
+       left: '20px',
+       width: 0,
+       height: 0,
+       borderLeft: '10px solid transparent',
+       borderRight: '10px solid transparent',
+       borderBottom: `10px solid ${theme.palette.background.paper}`,
+     },
+   }));
+
+const DropdownWrapper = styled(Box)(({ theme }) => ({
+     position: 'relative',
+}));
+
+
 const ResponsiveAppBar = (props) => {
      const [mobileOpen, setMobileOpen] = useState(false);
      const [anchorElUser, setAnchorElUser] = useState(null);
-     const [isLoggedIn, setIsLoggedIn] = useState(false); // Mock login state
+     const [isLoggedIn, setIsLoggedIn] = useState(true); // Mock login state
      const [appBarBg, setAppBarBg] = useState(''); // AppBar background state
      const [appBarShadow, setAppBarShadow] = useState('none'); // AppBar background state
+
+     const [openDropdown, setOpenDropdown] = useState(null);
+
+     const handleDropdownClick = (index) => {
+          setOpenDropdown((prev) => (prev === index ? null : index));
+     };
 
 
      const handleDrawerToggle = () => {
@@ -96,6 +153,7 @@ const ResponsiveAppBar = (props) => {
                               <Link href={item.path} passHref legacyBehavior>
                                    <ListItemButton sx={{ textAlign: 'center' }}>
                                         <ListItemText primary={item.label} />
+
                                    </ListItemButton>
                               </Link>
                          </ListItem>
@@ -153,12 +211,67 @@ const ResponsiveAppBar = (props) => {
                          </Link>
 
                          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', justifyContent: 'center' } }}>
-                              {navItems.map((page, index) => (
-                                   <Link href={page.path} passHref key={index} legacyBehavior>
-                                        <Typography sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer' }}>
-                                             {page.label}
-                                        </Typography>
-                                   </Link>
+
+                              {navItems.map((item, index) => (
+                                   <DropdownWrapper key={index}>
+                                        {item.subItems ? (
+                                             // Render dropdown or subitems if `subItems` exist
+                                             <Typography sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
+                                                  <Box display={'flex'} alignItems={'center'}>
+
+                                                       {item.label}
+                                                       {item.subItems && <KeyboardArrowDownIcon onClick={() => handleDropdownClick(index)} sx={{ ml: '1', color: 'black' }} />}
+                                                  </Box>
+
+                                             </Typography>
+                                        ) : (
+                                             // Render regular item if `subItems` do not exist
+                                             <Link href={item.path} passHref key={index} legacyBehavior>
+                                                  <Typography sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
+                                                       <Box display={'flex'} alignItems={'center'}>
+
+                                                            {item.label}
+                                                            {item.subItems && <KeyboardArrowDownIcon onClick={() => handleDropdownClick(index)} sx={{ ml: '1', color: 'black' }} />}
+                                                       </Box>
+
+                                                  </Typography>
+
+
+                                             </Link>
+                                        )}
+
+                                        <Box>
+                                             {item.subItems && openDropdown === index && (
+                                                  <Dropdown
+                                                       className="dropdown"
+                                                       sx={{ display: 'block', opacity: 1, transform: 'translateY(0)' }}
+                                                       onClose={() => handleDropdownClick(index)}
+                                                       onClick={() => handleDropdownClick(index)}
+
+                                                  >
+                                                       <Box sx={{
+                                                            display: 'grid',
+                                                            gridTemplateColumns: 'repeat(2, 1fr)', // Two columns
+                                                            gap: 0, // Gap between items
+                                                            padding: 2, // Optional padding
+
+                                                       }}>
+                                                            {item.subItems.map((subItem, subIndex) => (
+                                                                 <Link key={subIndex} href={subItem.path} passHref legacyBehavior>
+                                                                      <Typography sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
+
+                                                                           {subItem.label}
+                                                                      </Typography>
+                                                                 </Link>
+                                                            ))}
+                                                       </Box>
+                                                  </Dropdown>
+                                             )
+                                             }
+                                        </Box>
+                                   </DropdownWrapper>
+
+
                               ))}
                          </Box>
 
