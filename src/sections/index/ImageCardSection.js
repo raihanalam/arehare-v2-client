@@ -89,7 +89,7 @@ const HoverCardComponent = () => {
       </Typography>
       <CardContainer>
         {portfolioCards.map((card, index) => (
-            <Card>
+            <Card key={index}>
               <Image src={card.src} alt={card.title} />
               <CardContent className="card-content">
                 <Typography variant="h6">{card.title}</Typography>

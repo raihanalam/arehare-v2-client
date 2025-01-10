@@ -20,7 +20,7 @@ export default function LatestProjectsSection() {
     if (PROJECTS) {
       setProjects(PROJECTS.slice(0, 4));
     }
-  }, [PROJECTS]);
+  }, []);
 
   return (
 

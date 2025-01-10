@@ -21,7 +21,7 @@ export default function ServiceSection() {
           if (PRODUCTS) {
                setProducts(PRODUCTS.slice(0, 8));
           }
-     }, [PRODUCTS]);
+     }, []);
 
      const handleOpenFilter = () => {
           setOpenFilter(true);

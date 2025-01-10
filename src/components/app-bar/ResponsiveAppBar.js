@@ -63,6 +63,7 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 const Dropdown = styled(Box)(({ theme }) => ({
      position: 'absolute',
      top: '100%',
+     width: '800px',
      left: 0,
      background: theme.palette.background.paper,
      boxShadow: theme.shadows[3],
@@ -191,7 +192,7 @@ const ResponsiveAppBar = (props) => {
                     <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                          <Link href={'/'} passHref legacyBehavior>
                               <Box display={'flex'} alignItems={'center'}>
-                                   <Image src={'/logo/logo.png'} width={50} height={50} />
+                                   <Image src={'/logo/logo.png'} alt="arehare" width={50} height={50} />
                                    <Typography
                                         variant="h3"
                                         noWrap
@@ -216,25 +217,25 @@ const ResponsiveAppBar = (props) => {
                                    <DropdownWrapper key={index}>
                                         {item.subItems ? (
                                              // Render dropdown or subitems if `subItems` exist
-                                             <Typography sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
+                                             <Box sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
                                                   <Box display={'flex'} alignItems={'center'}>
 
                                                        {item.label}
                                                        {item.subItems && <KeyboardArrowDownIcon onClick={() => handleDropdownClick(index)} sx={{ ml: '1', color: 'black' }} />}
                                                   </Box>
 
-                                             </Typography>
+                                             </Box>
                                         ) : (
                                              // Render regular item if `subItems` do not exist
                                              <Link href={item.path} passHref key={index} legacyBehavior>
-                                                  <Typography sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
+                                                  <Box sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
                                                        <Box display={'flex'} alignItems={'center'}>
 
                                                             {item.label}
                                                             {item.subItems && <KeyboardArrowDownIcon onClick={() => handleDropdownClick(index)} sx={{ ml: '1', color: 'black' }} />}
                                                        </Box>
 
-                                                  </Typography>
+                                                  </Box>
 
 
                                              </Link>
@@ -277,7 +278,7 @@ const ResponsiveAppBar = (props) => {
 
                          <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
                               {isLoggedIn ? (
-                                   <>
+                                   <Box>
                                         <Tooltip title="Open settings">
                                              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                                   <Avatar src="/assets/images/avatars/avatar_default.jpg" alt="photoURL" />
@@ -334,9 +335,9 @@ const ResponsiveAppBar = (props) => {
                                                   </Link>
                                              ))}
                                         </Menu>
-                                   </>
+                                   </Box>
                               ) : (
-                                   <>
+                                   <Box>
                                         <Link href="/login" passHref>
                                              <Button variant="outlined" sx={{ mr: 2 }}>
                                                   Signin
@@ -347,7 +348,7 @@ const ResponsiveAppBar = (props) => {
                                                   Signup
                                              </Button>
                                         </Link>
-                                   </>
+                                   </Box>
                               )}
                          </Box>
 
@@ -359,7 +360,6 @@ const ResponsiveAppBar = (props) => {
                          </Box>
                     </Toolbar>
                </Container>
-               {/* <nav> */}
                <Drawer
                     container={props.window !== undefined ? () => props.window().document.body : undefined}
                     anchor="right"
@@ -375,7 +375,6 @@ const ResponsiveAppBar = (props) => {
                     {drawer}
                </Drawer>
 
-               {/* </nav> */}
           </StyledAppBar>
      );
 };

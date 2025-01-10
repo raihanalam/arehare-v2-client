@@ -1,5 +1,6 @@
 import { Box, Typography, Container, Link, Grid, IconButton } from '@mui/material';
 import { Facebook, Twitter, Instagram, LinkedIn, Payment } from '@mui/icons-material';
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -76,9 +77,9 @@ const Footer = () => {
                 We Accept
               </Typography>
               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'center' }}>
-                <img src="/assets/images/Visa1.png" alt="Visa" width="40" height="15" />
-                <img src="/assets/images/Mastercard.png" alt="MasterCard" width="30" />
-                <img src="/assets/images/Stripe.png" alt="Stripe" width="50" />
+                <Image src="/assets/images/Visa1.png" alt="Visa" width="40" height="15" />
+                <Image src="/assets/images/Mastercard.png" alt="MasterCard" width="30" />
+                <Image src="/assets/images/Stripe.png" alt="Stripe" width="50" />
               </Box>
             </Grid>
           </Grid>

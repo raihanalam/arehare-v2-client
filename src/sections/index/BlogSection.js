@@ -18,7 +18,7 @@ export default function BlogSection() {
                setBlogData(POSTS.slice(0,7));
           }
 
-     }, [POSTS])
+     }, [])
 
      return (
 
