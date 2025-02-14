@@ -1,33 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import {
-  AppBar,
-  Box,
-  Toolbar,
-  IconButton,
-  Typography,
-  Button,
-  Container,
-  Avatar,
-  Tooltip,
-  Menu,
-  MenuItem,
-  Drawer,
-  Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  ListItemIcon,
+     AppBar,
+     Box,
+     Toolbar,
+     IconButton,
+     Typography,
+     Button,
+     Container,
+     Avatar,
+     Tooltip,
+     Menu,
+     MenuItem,
+     Drawer,
+     Divider,
+     List,
+     ListItem,
+     ListItemButton,
+     ListItemText,
+     ListItemIcon,
 } from '@mui/material';
 import {
-  Menu as MenuIcon,
-  Close as CloseIcon,
-  Settings,
-  Logout,
-  Dashboard as DashboardIcon,
-  AccountCircle as AccountCircleIcon,
-  KeyboardArrowDown as KeyboardArrowDownIcon,
+     Menu as MenuIcon,
+     Close as CloseIcon,
+     Settings,
+     Logout,
+     Dashboard as DashboardIcon,
+     AccountCircle as AccountCircleIcon,
+     KeyboardArrowDown as KeyboardArrowDownIcon,
 } from '@mui/icons-material';
+import HorizontalSplitIcon from '@mui/icons-material/HorizontalSplit';
 import { styled } from '@mui/system';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -49,7 +50,17 @@ const navItems = [{ label: 'Home', path: '/' }, {
           { label: 'Marketing & Sales', path: '/services/digital-marketing' },
           { label: 'Writing & Translations', path: '/services/digital-marketing' },
      ],
-}, { label: 'Businesses', path: '/Businesses' }, { label: 'About', path: '/about' }, { label: 'Contact', path: '/contact' }, { label: 'Blog', path: '/blog' }];
+}, { label: 'Businesses', path: '/Businesses' }, { label: 'About', path: '/about' }, { label: 'Contact', path: '/contact' }, {
+     label: 'Blog', path: '/blog',
+
+     subItems: [
+          { label: 'AI Solutions', path: '/services/aii-solution' },
+          { label: 'Programming & Tech', path: '/services/web-development' },
+          { label: 'Graphic & Design', path: '/services/app-development' },
+          { label: 'Writing & Translations', path: '/services/digital-marketing' },
+     ]
+
+}];
 const settings = [{ label: 'Profile', path: '/profile' }, { label: 'Dashboard', path: '/dashboard' }, { label: 'Settings', path: '/settings' }, { label: 'Logout', path: '/logout' }];
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
@@ -63,7 +74,6 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 const Dropdown = styled(Box)(({ theme }) => ({
      position: 'absolute',
      top: '100%',
-     width: '800px',
      left: 0,
      background: theme.palette.background.paper,
      boxShadow: theme.shadows[3],
@@ -75,17 +85,17 @@ const Dropdown = styled(Box)(({ theme }) => ({
      opacity: 0,
      transform: 'translateY(-10px)',
      '&::before': {
-       content: '""',
-       position: 'absolute',
-       top: '-10px',
-       left: '20px',
-       width: 0,
-       height: 0,
-       borderLeft: '10px solid transparent',
-       borderRight: '10px solid transparent',
-       borderBottom: `10px solid ${theme.palette.background.paper}`,
+          content: '""',
+          position: 'absolute',
+          top: '-10px',
+          left: '20px',
+          width: 0,
+          height: 0,
+          borderLeft: '10px solid transparent',
+          borderRight: '10px solid transparent',
+          borderBottom: `10px solid ${theme.palette.background.paper}`,
      },
-   }));
+}));
 
 const DropdownWrapper = styled(Box)(({ theme }) => ({
      position: 'relative',
@@ -100,6 +110,7 @@ const ResponsiveAppBar = (props) => {
      const [appBarShadow, setAppBarShadow] = useState('none'); // AppBar background state
 
      const [openDropdown, setOpenDropdown] = useState(null);
+
 
      const handleDropdownClick = (index) => {
           setOpenDropdown((prev) => (prev === index ? null : index));
@@ -143,12 +154,12 @@ const ResponsiveAppBar = (props) => {
      }, []);
 
      const drawer = (
-          <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-               <IconButton onClick={handleDrawerToggle} sx={{ mx: 'auto', my: 2, height: '25px' }}>
+          <Box sx={{ textAlign: 'center' }}>
+               <IconButton onClick={handleDrawerToggle} sx={{ mx: 'auto', my: 2, height: '35px', width: '35px' }}>
                     <CloseIcon />
                </IconButton>
                <Divider />
-               <List>
+               {/* <List>
                     {navItems.map((item) => (
                          <ListItem key={item.label} disablePadding>
                               <Link href={item.path} passHref legacyBehavior>
@@ -159,11 +170,63 @@ const ResponsiveAppBar = (props) => {
                               </Link>
                          </ListItem>
                     ))}
-               </List>
+               </List> */}
+               <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+                    {navItems.map((item, index) => (
+                         <List key={index}>
+                              {item.subItems ? (
+                                   // Render dropdown or subitems if `subItems` exist
+                                   <ListItem onMouseOver={() => handleDropdownClick(index)} display={'flex'} alignItems={'center'}>
+
+                                        {item.label}
+                                        {item.subItems && <KeyboardArrowDownIcon sx={{ ml: '1', color: 'black' }} />}
+                                   </ListItem>
+
+                              ) : (
+                                   // Render regular item if `subItems` do not exist
+                                   <Link href={item.path} passHref key={index} legacyBehavior>
+                                        <ListItem display={'flex'} alignItems={'center'}>
+
+                                             {item.label}
+                                             {item.subItems && <KeyboardArrowDownIcon sx={{ ml: '1', color: 'black' }} />}
+                                        </ListItem>
+                                   </Link>
+                              )}
+
+                              <Box >
+                                   {item.subItems && openDropdown === index && (
+                                        <Dropdown
+                                             className="dropdown"
+                                             sx={{ position: 'relative', display: 'block', opacity: 1, transform: 'translateY(0)' }}
+                                             onMouseLeave={() => handleDropdownClick(index)}
+                                             onClick={() => handleDropdownClick(index)}
+
+                                        >
+
+                                             {item.subItems.map((subItem, subIndex) => (
+                                                  <ListItem >
+                                                       <Link key={subIndex} href={subItem.path} passHref legacyBehavior>
+                                                            <Typography sx={{ color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
+
+                                                                 {subItem.label}
+                                                            </Typography>
+                                                       </Link>
+                                                  </ListItem>
+                                             ))}
+                                        </Dropdown>
+                                   )
+                                   }
+                              </Box>
+                         </List>
+
+
+                    ))}
+
+               </Box>
                {/* Sign In / Sign Up buttons inside drawer */}
                <Box sx={{ mt: 2 }}>
                     {isLoggedIn ? (
-                         <Tooltip title="Open settings">
+                         <Tooltip title="Open Settings">
                               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                    <Avatar src="/assets/images/avatars/avatar_default.jpg" alt="photoURL" />
                               </IconButton>
@@ -194,7 +257,7 @@ const ResponsiveAppBar = (props) => {
                               <Box display={'flex'} alignItems={'center'}>
                                    <Image src={'/logo/logo.png'} alt="arehare" width={50} height={50} />
                                    <Typography
-                                        variant="h3"
+                                        variant="h4"
                                         noWrap
                                         sx={{
                                              ml: 1,
@@ -217,14 +280,15 @@ const ResponsiveAppBar = (props) => {
                                    <DropdownWrapper key={index}>
                                         {item.subItems ? (
                                              // Render dropdown or subitems if `subItems` exist
-                                             <Box sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
+                                             <Box onMouseOver={() => handleDropdownClick(index)}  sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
                                                   <Box display={'flex'} alignItems={'center'}>
 
                                                        {item.label}
-                                                       {item.subItems && <KeyboardArrowDownIcon onClick={() => handleDropdownClick(index)} sx={{ ml: '1', color: 'black' }} />}
+                                                       {item.subItems && <KeyboardArrowDownIcon sx={{ ml: '1', color: 'black' }} />}
                                                   </Box>
 
                                              </Box>
+
                                         ) : (
                                              // Render regular item if `subItems` do not exist
                                              <Link href={item.path} passHref key={index} legacyBehavior>
@@ -246,8 +310,8 @@ const ResponsiveAppBar = (props) => {
                                                   <Dropdown
                                                        className="dropdown"
                                                        sx={{ display: 'block', opacity: 1, transform: 'translateY(0)' }}
-                                                       onClose={() => handleDropdownClick(index)}
-                                                       onClick={() => handleDropdownClick(index)}
+                                                       onMouseLeave={() => handleDropdownClick(index)}
+
 
                                                   >
                                                        <Box sx={{
@@ -279,11 +343,18 @@ const ResponsiveAppBar = (props) => {
                          <Box sx={{ flexGrow: 0, display: { xs: 'none', md: 'flex' } }}>
                               {isLoggedIn ? (
                                    <Box>
-                                        <Tooltip title="Open settings">
-                                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                                  <Avatar src="/assets/images/avatars/avatar_default.jpg" alt="photoURL" />
-                                             </IconButton>
-                                        </Tooltip>
+                                        <Box display={'flex'} alignItems={'center'}>
+                                             <Tooltip title="Open settings">
+                                                  <IconButton onMouseOver={handleOpenUserMenu} sx={{ p: 0 }}>
+                                                       <Avatar src="/assets/images/avatars/avatar_default.jpg" alt="photoURL" />
+                                                  </IconButton>
+                                             </Tooltip>
+                                             <Box textAlign={'left'} ml={1}>
+                                                  <Typography sx={{ color: 'gray', fontSize: '12px', fontWeight: '700' }} >Solomon Vendy</Typography>
+                                                  <Typography sx={{ color: 'gray', fontSize: '10px' }}>Freelancer</Typography>
+                                             </Box>
+                                        </Box>
+
                                         <Menu
                                              anchorEl={anchorElUser}
                                              open={Boolean(anchorElUser)}
@@ -355,7 +426,7 @@ const ResponsiveAppBar = (props) => {
                          {/* Mobile Menu Icon */}
                          <Box sx={{ display: { xs: 'block', md: 'none' } }}>
                               <IconButton color="gray" aria-label="open drawer" edge="end" onClick={handleDrawerToggle}>
-                                   <MenuIcon />
+                                   <HorizontalSplitIcon />
                               </IconButton>
                          </Box>
                     </Toolbar>

@@ -1,19 +1,18 @@
 import { Box, Typography, Container, Link, Grid, IconButton } from '@mui/material';
-import { Facebook, Twitter, Instagram, LinkedIn, Payment } from '@mui/icons-material';
+import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
 import Image from 'next/image';
 
 const Footer = () => {
   return (
     <Box sx={{
-      backgroundColor: '#ffffff',
-      color: 'gray',
-      mt:10
+      backgroundColor: '#000000', // Change to black background
+      color: '#ffffff', // Change text color to white
+      mt: 10
     }}>
       <Container maxWidth="xl">
         <Box
           sx={{
-            // backgroundColor: '#ffffff',
-            color: 'gray',
+            color: '#ffffff', // Ensure text color is white
             py: 6,
             px: 4,
           }}
@@ -24,7 +23,7 @@ const Footer = () => {
               <Typography variant="h6" gutterBottom>
                 About AreHare
               </Typography>
-              <Typography variant="body2" sx={{ color: 'gray' }}>
+              <Typography variant="body2" sx={{ color: '#b3b3b3' }}>
                 AreHare offers top-notch digital solutions for businesses, including web development, app development, digital marketing, and more.
               </Typography>
             </Grid>
@@ -35,16 +34,16 @@ const Footer = () => {
                 Quick Links
               </Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-                <Link href="/about" underline="none" sx={{ color: 'gray' }}>
+                <Link href="/about" underline="none" sx={{ color: '#b3b3b3' }}>
                   About Us
                 </Link>
-                <Link href="/services" underline="none" sx={{ color: 'gray' }}>
+                <Link href="/services" underline="none" sx={{ color: '#b3b3b3' }}>
                   Services
                 </Link>
-                <Link href="/contact" underline="none" sx={{ color: 'gray' }}>
+                <Link href="/contact" underline="none" sx={{ color: '#b3b3b3' }}>
                   Contact
                 </Link>
-                <Link href="/blog" underline="none" sx={{ color: 'gray' }}>
+                <Link href="/blog" underline="none" sx={{ color: '#b3b3b3' }}>
                   Blog
                 </Link>
               </Box>
@@ -56,16 +55,16 @@ const Footer = () => {
                 Follow Us
               </Typography>
               <Box>
-                <IconButton sx={{ color: 'inherit' }} href="https://www.facebook.com" target="_blank">
+                <IconButton sx={{ color: '#b3b3b3' }} href="https://www.facebook.com" target="_blank">
                   <Facebook />
                 </IconButton>
-                <IconButton sx={{ color: 'inherit' }} href="https://www.twitter.com" target="_blank">
+                <IconButton sx={{ color: '#b3b3b3' }} href="https://www.twitter.com" target="_blank">
                   <Twitter />
                 </IconButton>
-                <IconButton sx={{ color: 'inherit' }} href="https://www.instagram.com" target="_blank">
+                <IconButton sx={{ color: '#b3b3b3' }} href="https://www.instagram.com" target="_blank">
                   <Instagram />
                 </IconButton>
-                <IconButton sx={{ color: 'inherit' }} href="https://www.linkedin.com" target="_blank">
+                <IconButton sx={{ color: '#b3b3b3' }} href="https://www.linkedin.com" target="_blank">
                   <LinkedIn />
                 </IconButton>
               </Box>
@@ -77,16 +76,16 @@ const Footer = () => {
                 We Accept
               </Typography>
               <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'center' }}>
-                <Image src="/assets/images/Visa1.png" alt="Visa" width="40" height="15" />
-                <Image src="/assets/images/Mastercard.png" alt="MasterCard" width="30" />
-                <Image src="/assets/images/Stripe.png" alt="Stripe" width="50" />
+                <Image src="/assets/images/Visa1.png" alt="Visa" width="25" height="15" />
+                <Image src="/assets/images/Mastercard.png" alt="MasterCard" width="20" height="15" />
+                <Image src="/assets/images/Stripe.png" alt="Stripe" width="30" height="15"/>
               </Box>
             </Grid>
           </Grid>
 
           {/* Bottom Footer */}
-          <Box sx={{ textAlign: 'center', pt: 4, borderTop: '1px solid gray', mt: 6 }}>
-            <Typography variant="body2" sx={{ color: 'gray' }}>
+          <Box sx={{ textAlign: 'center', pt: 4, borderTop: '1px solid #b3b3b3', mt: 6 }}>
+            <Typography variant="body2" sx={{ color: '#b3b3b3' }}>
               © {new Date().getFullYear()} AreHare Inc. All Rights Reserved.
             </Typography>
           </Box>

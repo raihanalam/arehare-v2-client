@@ -74,7 +74,7 @@ const ReviewSlider = () => {
           component="img"
           image={imageSrc}
           alt={`${name} image`}
-          sx={{ width: '100px', height: '100px', objectFit: 'cover', borderRadius: '20px' }}
+          sx={{position: 'relative', width: '400px', height: '300px', objectFit: 'cover', borderRadius: '20px' }}
         />
 
         {/* Right Side: Text */}
