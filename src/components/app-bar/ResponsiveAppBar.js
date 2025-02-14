@@ -204,8 +204,8 @@ const ResponsiveAppBar = (props) => {
                                         >
 
                                              {item.subItems.map((subItem, subIndex) => (
-                                                  <ListItem >
-                                                       <Link key={subIndex} href={subItem.path} passHref legacyBehavior>
+                                                  <ListItem key={subIndex} >
+                                                       <Link href={subItem.path} passHref legacyBehavior>
                                                             <Typography sx={{ color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
 
                                                                  {subItem.label}
