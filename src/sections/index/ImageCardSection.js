@@ -50,32 +50,32 @@ const CardContent = styled(Box)({
 
 const portfolioCards = [
   {
-    src: 'assets/images/products/service-11.jpg',
+    src: 'assets/images/services/service-11.jpg',
     title: 'Creative Logo Design',
     link: '/card-1',
   },
   {
-    src: 'assets/images/products/service-15.jpg',
+    src: 'assets/images/services/service-15.jpg',
     title: 'Professional Website Development',
     link: '/card-2',
   },
   {
-    src: 'assets/images/products/service-14.jpg',
+    src: 'assets/images/services/service-14.jpg',
     title: 'E-Commerce Store Setup',
     link: '/card-3',
   },
   {
-    src: 'assets/images/products/service-17.jpg',
+    src: 'assets/images/services/service-17.jpg',
     title: 'Custom Mobile App Development',
     link: '/card-4',
   },
   {
-    src: 'assets/images/products/service-18.jpg',
+    src: 'assets/images/services/service-18.jpg',
     title: 'Digital Marketing Solutions',
     link: '/card-5',
   },
   {
-    src: 'assets/images/products/service-21.jpg',
+    src: 'assets/images/services/service-21.jpg',
     title: 'SEO and Content Optimization',
     link: '/card-6',
   },

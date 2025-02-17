@@ -12,7 +12,7 @@ import Link from 'next/link';
 
 
 // Styled components
-const StyledProductImg = styled('img')({
+const StyledServiceImg = styled('img')({
   width: '100%',
   height: 240, // Adjusted height
   objectFit: 'cover',
@@ -41,20 +41,20 @@ const StyledCard = styled(Card)(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-ShopProductCard.propTypes = {
-  product: PropTypes.object.isRequired, // Ensure product is always passed
+ShopServiceCard.propTypes = {
+  service: PropTypes.object.isRequired, // Ensure service is always passed
 };
 
-export default function ShopProductCard({ product }) {
+export default function ShopServiceCard({ service }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handleNextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % product.images.length);
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % service.images.length);
   };
 
   const handlePrevImage = () => {
     setCurrentImageIndex(
-      (prevIndex) => (prevIndex - 1 + product.images.length) % product.images.length
+      (prevIndex) => (prevIndex - 1 + service.images.length) % service.images.length
     );
   };
 
@@ -62,10 +62,10 @@ export default function ShopProductCard({ product }) {
     <StyledCard sx={{ borderRadius: 2, overflow: 'hidden', position: 'relative', width: 350, maxWidth: '100%' }}>
       {/* Image with Navigation */}
       <Box sx={{ position: 'relative' }}>
-        {product?.status && (
+        {/* {service?.status && (
           <Label
             variant="filled"
-            color={(product.status === 'Featured' && 'error') || 'info'}
+            color={(service.status === 'Featured' && 'error') || 'info'}
             sx={{
               zIndex: 9,
               top: 16,
@@ -74,10 +74,10 @@ export default function ShopProductCard({ product }) {
               textTransform: 'uppercase',
             }}
           >
-            {product.status}
+            {service.status}
           </Label>
-        )}
-        <StyledProductImg src={product.images[currentImageIndex]} alt={product.name} />
+        )} */}
+        <StyledServiceImg src={service.images[currentImageIndex]} alt={service.name} />
         {/* Favorite Icon */}
         <IconButton
           size="small"
@@ -148,7 +148,7 @@ export default function ShopProductCard({ product }) {
               },
             }}
           >
-            {product.name}
+            {service.name}
           </Typography>
         </Link>
 
@@ -157,15 +157,15 @@ export default function ShopProductCard({ product }) {
         {/* User Avatar, Ratings and Count */}
 
         <Stack direction="row" alignItems="center" spacing={1}>
-          <StyledAvatar alt={product.user.name} src={product.user.avatar} />
+          <StyledAvatar alt={service.user.name} src={service.user.avatar} />
           <Stack>
             <Typography variant="body2" sx={{ fontWeight: 600 }}>
-              {product.user.name}
+              {service.user.name}
             </Typography>
             <Stack direction="row">
-              <Rating value={product.rating} precision={0.5} readOnly size="small" />
+              <Rating value={service.rating} precision={0.5} readOnly size="small" />
               <Typography variant="body2" color="text.secondary">
-                ({product.ratingCount})
+                ({service.ratingCount})
               </Typography>
             </Stack>
           </Stack>
@@ -174,7 +174,7 @@ export default function ShopProductCard({ product }) {
         {/* Service Price */}
         <Box sx={{}} >
           <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
-            Starts from {fCurrency(product.price)}
+            Starts from {fCurrency(service.price)}
           </Typography>
         </Box>
       </Stack>

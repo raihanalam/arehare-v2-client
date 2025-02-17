@@ -65,7 +65,7 @@ const ProjectList = ({ projects }) => {
           className="custom2-swiper-button-prev"
           sx={{
             position: 'absolute',
-            top: '110%',
+            top: '102%',
             left: 10,
             zIndex: 10,
             transform: 'translateY(-50%)',
@@ -79,7 +79,7 @@ const ProjectList = ({ projects }) => {
         >
           <ArrowLeftIcon sx={{
             cursor: "pointer",
-            fontSize: 32,
+            fontSize: 20,
             "&:hover": { color: "gray" },
           }} />
         </ArrowButton>
@@ -87,7 +87,7 @@ const ProjectList = ({ projects }) => {
           className="custom2-swiper-button-next"
           sx={{
             position: 'absolute',
-            top: '110%',
+            top: '102%',
             right: 10,
             zIndex: 10,
             transform: 'translateY(-50%)',
@@ -101,7 +101,7 @@ const ProjectList = ({ projects }) => {
         >
           <ArrowRightIcon sx={{
             cursor: "pointer",
-            fontSize: 32,
+            fontSize: 20,
             "&:hover": { color: "gray" },
           }} />
         </ArrowButton>

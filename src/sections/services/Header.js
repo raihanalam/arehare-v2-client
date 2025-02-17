@@ -15,7 +15,7 @@ import { Favorite, Share, Star } from '@mui/icons-material';
 const Header = () => (
      <Box display="flex" justifyContent="space-between" alignItems="center" sx={{ mb: '25px' }}>
        <Box>
-         <Typography variant="h3">I will craft engaging social media marketing, copywriting</Typography>
+         <Typography variant="h3">I will craft your ideas into reality.</Typography>
    
          <Box display="flex" gap={2} mt={1} sx={{ color: 'gray' }}>
            <Typography variant="body6" color="text.secondary">

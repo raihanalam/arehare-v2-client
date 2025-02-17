@@ -9,11 +9,13 @@ import {
   MenuItem,
   InputAdornment,
   Card,
-  Avatar
+  Avatar,
+  Link
 } from "@mui/material";
 import { styled } from "@mui/system";
 import { Search } from "@mui/icons-material";
 import { motion } from "framer-motion";
+import FacebookIcon from "@mui/icons-material/Facebook";
 
 // Custom Styling
 const Hero = styled(Box)(({ theme }) => ({
@@ -75,7 +77,7 @@ export default function HeroSection() {
               lineHeight: "1.1em",
             }}
           >
-            Find The Best <br />
+            Hire The Best <br />
             <span
               style={{
                 color: "transparent",
@@ -89,9 +91,27 @@ export default function HeroSection() {
           </Typography>
         </motion.div>
         <motion.div variants={itemVariants}>
-          <Typography variant="body1" paragraph>
+          {/* <Typography variant="body1" paragraph>
             Find the perfect talent exactly when you need
+          </Typography> */}
+
+          <Typography variant="body1" paragraph>
+
+            The site is under maintenance, we will back soon.
           </Typography>
+          <Box sx={{ textAlign: "center", py: 1, color: "Gray" }}>
+            <Typography variant="body2">
+              Need support?{" "}
+              <Link
+                href="https://www.facebook.com/arehare.inc"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{ textDecoration: "none", display: "inline-flex", alignItems: "center", gap: 0.5, "&:hover": { color: "secondary.light" } }}
+              >
+                Visit our Facebook <FacebookIcon fontSize="small" />
+              </Link>
+            </Typography>
+          </Box>
         </motion.div>
         <Container maxWidth="md">
           <motion.div variants={searchBarVariants}>
@@ -118,7 +138,7 @@ export default function HeroSection() {
                   ),
                 }}
               />
-              <Select
+              {/* <Select
                 defaultValue=""
                 displayEmpty
                 variant="outlined"
@@ -127,7 +147,7 @@ export default function HeroSection() {
                 <MenuItem value="">Services</MenuItem>
                 <MenuItem value="Freelancers">Freelancers</MenuItem>
                 <MenuItem value="Projects">Projects</MenuItem>
-              </Select>
+              </Select> */}
               <Button
                 variant="contained"
                 sx={{ padding: "0 30px", height: "56px" }}

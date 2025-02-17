@@ -87,7 +87,7 @@ const ServiceDetails = () => {
 
       <Navbar />
       {/* Breadcrumbs */}
-      <Breadcrumbs />
+      <Breadcrumbs path={"Home > Services > Details"} />
       {/* Header */}
       <Header />
 

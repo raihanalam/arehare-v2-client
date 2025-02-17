@@ -1,13 +1,13 @@
 
 
 const images = [
-  '/assets/images/products/service-1.jpg',
-  '/assets/images/products/service-2.jpg',
-  '/assets/images/products/service-3.jpg',
-  '/assets/images/products/service-4.jpg',
-  '/assets/images/products/service-5.jpg',
-  '/assets/images/products/service-6.jpg',
-  '/assets/images/products/service-7.jpg',
+  '/assets/images/services/service-1.jpg',
+  '/assets/images/services/service-2.jpg',
+  '/assets/images/services/service-3.jpg',
+  '/assets/images/services/service-4.jpg',
+  '/assets/images/services/service-5.jpg',
+  '/assets/images/services/service-6.jpg',
+  '/assets/images/services/service-7.jpg',
 ]
 
 
@@ -120,7 +120,7 @@ const ImageGallery = ({ }) => {
             }}
             onClick={() => handleThumbnailClick(index)}
           >
-            <Image src={img} width={200} height={100} alt={`Thumbnail ${index}`} />
+            <Image src={img} width={200} height={80} alt={`Thumbnail ${index}`} />
           </Card>
         ))}
       </Box>

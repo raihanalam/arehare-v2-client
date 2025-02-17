@@ -3,47 +3,43 @@ import { sample } from 'lodash';
 
 // ----------------------------------------------------------------------
 
-const PRODUCT_NAME = [
-  "Custom Website Design & Development Custom Website Design & Development Custom Website Design & Development",
-  "Mobile App Development (iOS/Android)",
+const SERVICE_NAME = [
   "Full-Stack Web Application Development",
-  "SEO & Digital Marketing Strategy",
-  "Social Media Campaign Management",
+  "Odoo ERP Development Customization & Deployment",
+  "WordPress Theme & Plugin Development",
+  "Shopify E-commerce Store Setup & Maintenance",
+  "Cloud Solutions & DevOps Consulting",
+  "API Development & Integration",
+  "SaaS Application Development",
+  "Mobile App Development (iOS/Android)",
+  "Data Analysis & Business Intelligence",
+  "Cybersecurity & Penetration Testing",
+  "AI & Machine Learning Solutions",
+  "Digital Product Design & Prototyping",
   "UI/UX Design and Prototyping",
   "Graphic Design & Branding Solutions",
   "Content Creation & Copywriting Services",
   "Video Editing & Animation Creation",
-  "E-commerce Store Setup & Maintenance",
-  "Cloud Solutions & DevOps Consulting",
-  "API Development & Integration",
-  "CRM/ERP Implementation & Customization",
-  "WordPress Theme & Plugin Development",
-  "Data Analysis & Business Intelligence",
-  "Cybersecurity & Penetration Testing",
-  "Blockchain Development & Smart Contracts",
-  "AI & Machine Learning Solutions",
-  "Digital Product Design & Prototyping",
+  "SEO & Digital Marketing Strategy",
+  "Social Media Campaign Management",
   "Virtual Assistance & Project Management",
- "Translation & Localization Services",
-  "AR/VR Application Development",
-  "SaaS Application Development",
-  "Customer Support & Service Desk Solutions",
+  "Translation & Localization Services",
   "IT Consulting & Infrastructure Setup",
 ];
 
 // ----------------------------------------------------------------------
 
-const products = [...Array(24)].map((_, index) => {
+const services = [...Array(24)].map((_, index) => {
   const setIndex = index + 1;
 
   return {
     id: faker.datatype.uuid(), // Using faker.datatype.uuid() for version <= 7
-    cover: `/assets/images/products/service-${setIndex}.jpg`,
-    images: [`/assets/images/products/service-${setIndex}.jpg`, `/assets/images/products/service-${setIndex+1}.jpg`, `/assets/images/products/service-${setIndex+2}.jpg`],
+    cover: `/assets/images/services/service-${setIndex}.jpg`,
+    images: [`/assets/images/services/service-${setIndex}.jpg`, `/assets/images/services/service-${setIndex+1}.jpg`, `/assets/images/services/service-${setIndex+2}.jpg`],
     user: {name: faker.name.fullName(), avatar: `/assets/images/avatars/avatar_${index + 1}.jpg`,},
     rating: 5,
     ratingCount: 35,
-    name: PRODUCT_NAME[index],
+    name: SERVICE_NAME[index],
     price: parseFloat(faker.finance.amount(4, 99, 2)), // Generate a price as a string and convert to float
     priceSale: setIndex % 3 ? null : parseFloat(faker.finance.amount(19, 29, 2)), // Same here
    
@@ -51,4 +47,4 @@ const products = [...Array(24)].map((_, index) => {
   };
 });
 
-export default products;
+export default services;

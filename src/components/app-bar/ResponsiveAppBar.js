@@ -105,7 +105,7 @@ const DropdownWrapper = styled(Box)(({ theme }) => ({
 const ResponsiveAppBar = (props) => {
      const [mobileOpen, setMobileOpen] = useState(false);
      const [anchorElUser, setAnchorElUser] = useState(null);
-     const [isLoggedIn, setIsLoggedIn] = useState(true); // Mock login state
+     const [isLoggedIn, setIsLoggedIn] = useState(false); // Mock login state
      const [appBarBg, setAppBarBg] = useState(''); // AppBar background state
      const [appBarShadow, setAppBarShadow] = useState('none'); // AppBar background state
 
@@ -176,7 +176,7 @@ const ResponsiveAppBar = (props) => {
                          <List key={index}>
                               {item.subItems ? (
                                    // Render dropdown or subitems if `subItems` exist
-                                   <ListItem onMouseOver={() => handleDropdownClick(index)} display={'flex'} alignItems={'center'}>
+                                   <ListItem onClick={() => handleDropdownClick(index)} display={'flex'} alignItems={'center'}>
 
                                         {item.label}
                                         {item.subItems && <KeyboardArrowDownIcon sx={{ ml: '1', color: 'black' }} />}
@@ -280,7 +280,7 @@ const ResponsiveAppBar = (props) => {
                                    <DropdownWrapper key={index}>
                                         {item.subItems ? (
                                              // Render dropdown or subitems if `subItems` exist
-                                             <Box onMouseOver={() => handleDropdownClick(index)}  sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
+                                             <Box onClick={() => handleDropdownClick(index)}  sx={{ mr: 3, my: 2, color: '#444444', display: 'block', cursor: 'pointer', '&:hover': { borderBottom: '1px solid', borderColor: '#007aff' } }}>
                                                   <Box display={'flex'} alignItems={'center'}>
 
                                                        {item.label}
@@ -345,7 +345,7 @@ const ResponsiveAppBar = (props) => {
                                    <Box>
                                         <Box display={'flex'} alignItems={'center'}>
                                              <Tooltip title="Open settings">
-                                                  <IconButton onMouseOver={handleOpenUserMenu} sx={{ p: 0 }}>
+                                                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                                        <Avatar src="/assets/images/avatars/avatar_default.jpg" alt="photoURL" />
                                                   </IconButton>
                                              </Tooltip>

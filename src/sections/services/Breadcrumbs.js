@@ -2,7 +2,7 @@
 import { Breadcrumbs, Link, Typography, Box } from '@mui/material';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
-const CustomBreadcrumbs = () => (
+const CustomBreadcrumbs = ({path}) => (
   // <Breadcrumbs separator={<NavigateNextIcon fontSize="small" />} aria-label="breadcrumb">
   //   <Link href="/" underline="hover">Home</Link>
   //   <Link href="/services" underline="hover">Services</Link>
@@ -10,9 +10,9 @@ const CustomBreadcrumbs = () => (
   // </Breadcrumbs>
 
   // Breadcrumbs Component
-  <Box mb={2} pt={5}>
+  <Box mb={5} pt={5}>
     <Typography variant="body1" color="text.secondary">
-      {"Home > Services > Details"}
+      {path}
     </Typography>
   </Box>
 );

@@ -3,13 +3,13 @@ import { useState } from 'react';
 // @mui
 import { Container, Stack, Typography } from '@mui/material';
 // components
-import { ProductSort, ProductList, ProductCartWidget, ProductFilterSidebar } from '../sections/@dashboard/products';
+import { ServiceSort, ServiceList, ServiceCartWidget, ServiceFilterSidebar } from '../sections/@dashboard/services';
 // mock
-import PRODUCTS from '../_mock/products';
+import SERVICES from '../_mock/services';
 
 // ----------------------------------------------------------------------
 
-export default function ProductsPage() {
+export default function ServicesPage() {
   const [openFilter, setOpenFilter] = useState(false);
 
   const handleOpenFilter = () => {
@@ -25,22 +25,22 @@ export default function ProductsPage() {
 
       <Container>
         <Typography variant="h4" sx={{ mb: 5 }}>
-          Products
+          Services
         </Typography>
 
         <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="flex-end" sx={{ mb: 5 }}>
           <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>
-            <ProductFilterSidebar
+            <ServiceFilterSidebar
               openFilter={openFilter}
               onOpenFilter={handleOpenFilter}
               onCloseFilter={handleCloseFilter}
             />
-            <ProductSort />
+            <ServiceSort />
           </Stack>
         </Stack>
 
-        <ProductList products={PRODUCTS} />
-        <ProductCartWidget />
+        <ServiceList services={SERVICES} />
+        <ServiceCartWidget />
       </Container>
     </>
   );

@@ -1,15 +1,15 @@
 import PropTypes from 'prop-types';
 // @mui
 import { Grid, Box } from '@mui/material';
-import ShopProductCard from './ProductCard';
+import ShopServiceCard from './ServiceCard';
 
 // ----------------------------------------------------------------------
 
-ProductList.propTypes = {
-  products: PropTypes.array.isRequired,
+ServiceList.propTypes = {
+  services: PropTypes.array.isRequired,
 };
 
-export default function ProductList({ products, ...other }) {
+export default function ServiceList({ services, ...other }) {
   return (
     <Box
       sx={{
@@ -22,9 +22,9 @@ export default function ProductList({ products, ...other }) {
       }}
       {...other}
     >
-      {products?.map((product) => (
+      {services?.map((service) => (
         <Grid
-          key={product.id}
+          key={service.id}
           item
           xs={12}
           sm={6}
@@ -34,7 +34,7 @@ export default function ProductList({ products, ...other }) {
             justifyContent: 'center', // Ensures individual card is centered
           }}
         >
-          <ShopProductCard product={product} />
+          <ShopServiceCard service={service} />
         </Grid>
       ))}
     </Box>

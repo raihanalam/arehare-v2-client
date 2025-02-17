@@ -2,24 +2,24 @@ import { useState, useEffect } from 'react';
 import { Button, Typography, Container, Stack, Divider, Box } from '@mui/material';
 
 // components
-import { ProductSort, ProductList, ProductFilterSidebar } from '../@dashboard/products';
+import { ServiceSort, ServiceList, ServiceFilterSidebar } from '../@dashboard/services';
 
 import SectionHeaderLeft from '../../components/section/SectionHeaderLeft';
 import SectionHeaderRight from '../../components/section/SectionHeaderRight';
 
 // Mock
-import PRODUCTS from '../../_mock/products';
+import SERVICES from '../../_mock/services';
 
 // Navbar Component
 export default function ServiceSection() {
      const [openFilter, setOpenFilter] = useState(false);
-     const [productsData, setProducts] = useState([]);
+     const [servicesData, setServices] = useState([]);
 
 
 
      useEffect(() => {
-          if (PRODUCTS) {
-               setProducts(PRODUCTS.slice(0, 8));
+          if (SERVICES) {
+               setServices(SERVICES.slice(0, 8));
           }
      }, []);
 
@@ -44,7 +44,7 @@ export default function ServiceSection() {
                </Box>
 
 
-               <ProductList products={productsData} />
+               <ServiceList services={servicesData} />
           </Container>
      );
 }
