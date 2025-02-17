@@ -254,7 +254,7 @@ const ResponsiveAppBar = (props) => {
                <Container maxWidth="xxl">
                     <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                          <Link href={'/'} passHref legacyBehavior>
-                              <Box display={'flex'} alignItems={'center'}>
+                              <Box display={'flex'} alignItems={'center'} sx={{cursor: 'pointer'}}>
                                    <Image src={'/logo/logo.png'} alt="arehare" width={50} height={50} />
                                    <Typography
                                         variant="h4"

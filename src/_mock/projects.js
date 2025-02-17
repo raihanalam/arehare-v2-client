@@ -37,7 +37,7 @@ const projects = [...Array(20)].map((_, index) => {
      return {
           id: faker.datatype.uuid(),
           companyName: "arehare",
-          image: `/assets/images/products/service-${setIndex}.jpg`,
+          image: `/assets/images/services/service-${setIndex}.jpg`,
           title: PROJECT_TITLES[index % PROJECT_TITLES.length], // Cycles through the titles
           category: sample([
                "Resume Writing",
