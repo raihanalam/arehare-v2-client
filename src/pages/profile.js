@@ -27,7 +27,7 @@ const ProfilePage = () => {
                                    src="/profile.jpg"
                                    sx={{ width: 120, height: 120, mx: "auto", mb: 2 }}
                               />
-                              <Typography variant="h6">Marcus Rosser</Typography>
+                              <Typography variant="h6">Raihan Hridoy</Typography>
                               <Typography color="text.secondary">Product Manager</Typography>
                               <Typography variant="h6" sx={{ mt: 1 }}>$560/month</Typography>
                               <Box sx={{ mt: 2 }}>

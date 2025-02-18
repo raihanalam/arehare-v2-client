@@ -10,7 +10,7 @@ const CustomBreadcrumbs = ({path}) => (
   // </Breadcrumbs>
 
   // Breadcrumbs Component
-  <Box mb={5} pt={5}>
+  <Box mb={3} pt={5}>
     <Typography variant="body1" color="text.secondary">
       {path}
     </Typography>

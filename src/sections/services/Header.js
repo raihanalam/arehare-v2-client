@@ -5,6 +5,8 @@ import {
   Box,
 
   IconButton,
+  Avatar,
+
 
 
 } from '@mui/material';
@@ -17,9 +19,10 @@ const Header = () => (
        <Box>
          <Typography variant="h3">I will craft your ideas into reality.</Typography>
    
-         <Box display="flex" gap={2} mt={1} sx={{ color: 'gray' }}>
-           <Typography variant="body6" color="text.secondary">
-             By Kianna Bie
+         <Box display="flex" gap={2} mt={1} sx={{ color: ' #8c8f8a', fontSize: '10px', alignItems: 'center' }}>
+           <Typography variant="body6" color="text.secondary" sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+            <Avatar sx={{ width: 20, height: 20, marginRight: '5px' }} />   By Kianna Bie
+
            </Typography>
            <Typography variant="body6" display="flex" alignItems="center" >
              <Star sx={{ mr: '5px' }} />

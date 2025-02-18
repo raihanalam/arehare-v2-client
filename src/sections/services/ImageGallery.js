@@ -106,24 +106,40 @@ const ImageGallery = ({ }) => {
         </IconButton>
       </Card>
 
-      {/* Thumbnail Navigation */}
-      <Box mt={2} display="flex" alignItems="center" gap={1}>
-        {images.map((img, index) => (
-          <Card
-            key={index}
-            sx={{
-              width: "100%",
-              height: 100,
-              cursor: 'pointer',
-              border: currentIndex === index ? '1px solid #1976d2' : 'none',
-              transition: 'border 0.3s ease',
-            }}
-            onClick={() => handleThumbnailClick(index)}
-          >
-            <Image src={img} width={200} height={80} alt={`Thumbnail ${index}`} />
-          </Card>
-        ))}
-      </Box>
+{/* Thumbnail Navigation */}
+<Box mt={2} display="flex" alignItems="center" gap={1} flexWrap="wrap" justifyContent="center">
+  {images.map((img, index) => (
+    <Card
+      key={index}
+      sx={{
+        width: { xs: 80, sm: 120, md: 160, lg: 200 }, // Adjust width based on screen size
+        height: { xs: 50, sm: 70, md: 90, lg: 100 }, // Adjust height for responsiveness
+        cursor: 'pointer',
+        border: currentIndex === index ? '2px solid #1976d2' : 'none',
+        transition: 'border 0.3s ease',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        overflow: 'hidden', // Prevents image overflow
+        borderRadius: '8px', // Optional for aesthetics
+      }}
+      onClick={() => handleThumbnailClick(index)}
+    >
+      <Image 
+        src={img} 
+        alt={`Thumbnail ${index}`} 
+        width={200} 
+        height={100} 
+        style={{
+          width: '100%', 
+          height: '100%', 
+          objectFit: 'cover', // Ensures image fills the box properly
+        }} 
+      />
+    </Card>
+  ))}
+</Box>
+
 
       {/* Full-Screen Modal */}
       <Modal open={fullScreen} onClose={() => setFullScreen(false)}>
