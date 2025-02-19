@@ -25,11 +25,11 @@ const GREY = {
 };
 
 const PRIMARY = {
-  lighter: '#D1E9FC',
-  light: '#76B0F1',
-  main: '#2065D1',
-  dark: '#103996',
-  darker: '#061B64',
+  lighter: '#E6D8F2',  // Soft Lavender
+  light: '#B18CD9',    // Medium Purple
+  main: '#7B3FA0',     // Legacy Purple (Main)
+  dark: '#4E2673',     // Deep Purple
+  darker: '#2E1442',   // Darkest Shade
   contrastText: '#fff',
 };
 

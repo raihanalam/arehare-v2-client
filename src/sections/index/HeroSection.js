@@ -55,13 +55,13 @@ export default function HeroSection() {
     >
       <motion.div variants={itemVariants}>
         <Box sx={{ display: { xs: 'none', md: 'block' } }}>
-          <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_1.jpg'} sx={{ height: '35px', width: '35px', left: '20%', top: '200px' }} />
-          <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_2.jpg'} sx={{ height: '45px', width: '45px', left: '10%', top: '340px' }} />
-          <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_3.jpg'} sx={{ height: '55px', width: '55px', left: '20%', top: '440px' }} />
+          <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_3.jpg'} sx={{ height: '35px', width: '35px', left: '20%', top: '200px' }} />
+          <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_4.jpg'} sx={{ height: '45px', width: '45px', left: '10%', top: '340px' }} />
+          <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_1.jpg'} sx={{ height: '55px', width: '55px', left: '20%', top: '440px' }} />
 
-          <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_4.jpg'} sx={{ height: '35px', width: '35px', right: '20%', top: '200px' }} />
+          <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_6.jpg'} sx={{ height: '35px', width: '35px', right: '20%', top: '200px' }} />
           <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_5.jpg'} sx={{ height: '45px', width: '45px', right: '10%', top: '340px' }} />
-          <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_6.jpg'} sx={{ height: '55px', width: '55px', right: '20%', top: '440px' }} />
+          <StyledAvatar alt={'Avatar 1'} src={'/assets/images/avatars/avatar_2.jpg'} sx={{ height: '55px', width: '55px', right: '20%', top: '440px' }} />
         </Box>
       </motion.div>
       <Hero>

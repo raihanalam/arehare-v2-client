@@ -31,7 +31,7 @@ export default function HomePage() {
                <LatestProjectsSection />
                <HoverCardComponent/>
                <ReviewSlider/>
-               {/* <BuilderSection/> */}
+               <BuilderSection/>
                <BlogSection />
                <Footer/>
           </>

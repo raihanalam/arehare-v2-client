@@ -81,8 +81,8 @@ const Footer = () => {
                   key={index}
                   src={`/assets/images/${img}`}
                   alt={img.split(".")[0]}
-                  width={40}
-                  height={25}
+                  width={30}
+                  height={20}
                   style={{ filter: "grayscale(100%)", transition: "filter 0.3s", cursor: "pointer" }}
                   onMouseEnter={(e) => (e.target.style.filter = "grayscale(0%)")}
                   onMouseLeave={(e) => (e.target.style.filter = "grayscale(100%)")}

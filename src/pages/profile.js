@@ -24,7 +24,7 @@ const ProfilePage = () => {
                     <Grid item xs={12} md={4}>
                          <Paper elevation={3} sx={{ p: 3, textAlign: "center" }}>
                               <Avatar
-                                   src="/profile.jpg"
+                                   src="/assets/images/avatars/avatar_1.jpg"
                                    sx={{ width: 120, height: 120, mx: "auto", mb: 2 }}
                               />
                               <Typography variant="h6">Raihan Hridoy</Typography>
@@ -85,6 +85,32 @@ const ProfilePage = () => {
                                              </Typography>
                                              <Card sx={{ mt: 2 }}>
                                                   <CardContent>
+                                                       <Typography variant="h6">Software Engineer</Typography>
+                                                       <Typography variant="body2" color="textSecondary">
+                                                            October 2019 - Present
+                                                       </Typography>
+                                                       <Typography variant="body2" mt={1}>
+                                                            Working as a web designer focusing on UI/UX and front-end development.
+                                                       </Typography>
+                                                  </CardContent>
+                                             </Card>
+                                             <Card sx={{ mt: 2 }}>
+                                                  <CardContent>
+                                                       <Typography variant="h6">Web Designer</Typography>
+                                                       <Typography variant="body2" color="textSecondary">
+                                                            October 2019 - Present
+                                                       </Typography>
+                                                       <Typography variant="body2" mt={1}>
+                                                            Working as a web designer focusing on UI/UX and front-end development.
+                                                       </Typography>
+                                                  </CardContent>
+                                             </Card>
+                                              {/* Work Experience */}
+                                              <Typography variant="h5" mt={3}>
+                                                  Education Experience
+                                             </Typography>
+                                             <Card sx={{ mt: 2 }}>
+                                                  <CardContent>
                                                        <Typography variant="h6">Web Designer</Typography>
                                                        <Typography variant="body2" color="textSecondary">
                                                             October 2019 - Present
@@ -101,10 +127,10 @@ const ProfilePage = () => {
                                              </Typography>
                                              <Grid container spacing={2} mt={1}>
                                                   <Grid item xs={12} sm={6} md={4}>
-                                                       <Image src="/portfolio1.jpg" alt="Portfolio 1" width={300} height={200} style={{ borderRadius: 8 }} />
+                                                       <Image src="/assets/images/services/service-18.jpg" alt="Portfolio 1" width={300} height={200} style={{ borderRadius: 8 }} />
                                                   </Grid>
                                                   <Grid item xs={12} sm={6} md={4}>
-                                                       <Image src="/portfolio2.jpg" alt="Portfolio 2" width={300} height={200} style={{ borderRadius: 8 }} />
+                                                       <Image src="/assets/images/services/service-19.jpg" alt="Portfolio 2" width={300} height={200} style={{ borderRadius: 8 }} />
                                                   </Grid>
                                              </Grid>
                                         </Box>

@@ -4,15 +4,15 @@ import Head from 'next/head';
 
 // @mui
 import { styled } from '@mui/material/styles';
-import { Link, Container, Typography, Divider, Stack, Button } from '@mui/material';
+import { Link, Container, Typography, Divider, Stack, Button, Box } from '@mui/material';
 // hooks
 import useResponsive from '../hooks/useResponsive';
 // components
 // import Logo from '../components/logo';
 import Iconify from '../components/iconify';
 // sections
-import {SignupForm} from '../sections/auth/signup'
-
+import { SignupForm } from '../sections/auth/signup'
+import Navbar from '@/sections/index/NavSection';
 // ----------------------------------------------------------------------
 
 const StyledRoot = styled('div')(({ theme }) => ({
@@ -23,7 +23,7 @@ const StyledRoot = styled('div')(({ theme }) => ({
 
 const StyledSection = styled('div')(({ theme }) => ({
      width: '100%',
-     maxWidth: 480,
+     maxWidth: '40%',
      display: 'flex',
      flexDirection: 'column',
      justifyContent: 'center',
@@ -53,6 +53,8 @@ export default function SignupPage() {
                     <meta name="description" content="Leading Digital Solutions for Your Business" />
                     <link rel="icon" href="/favicon.ico" />
                </Head>
+               <Navbar />
+
 
                <StyledRoot>
 
@@ -62,7 +64,14 @@ export default function SignupPage() {
                               <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
                                    Hi, Welcome Back
                               </Typography>
-                              <Image src="/assets/illustrations/illustration_login.png" alt="login" />
+                              <Box sx={{ position: "relative", width: "100%", height: { xs: 200, sm: 300, md: 400 } }}>
+                                   <Image
+                                        src="/assets/illustrations/Work_from_home.png"
+                                        alt="login"
+                                        fill
+                                        style={{ objectFit: "cover" }} // Ensures the image covers the container properly
+                                   />
+                              </Box>
                          </StyledSection>
                     )}
 

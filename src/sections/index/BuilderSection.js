@@ -76,20 +76,23 @@ const BuilderSection = () => {
             <li>Fully responsive layouts</li>
             <li>Customizable templates based on industry</li>
             <li>SEO & performance optimization</li>
+            <li>Even Free Custom Domain</li>
           </ul>
-          <CallToActionBtn variant="contained">Get Started</CallToActionBtn>
+          <CallToActionBtn variant="contained">Coming Soon</CallToActionBtn>
         </TextContent>
 
         {/* Image and Floating Box Section */}
         <ImageContent>
           <Image
-            src="assets/images/products/service-24.jpg"
+            src="/assets/images/services/service-24.jpg"
             alt="AI Builder Example"
+            height={100}
+            width={100}
             style={{ width: '100%', borderRadius: '8px' }}
           />
           <FloatingBox>
             <Typography variant="body2">AI-Generated Design</Typography>
-            <Typography variant="h6" color="black">$2.99/month</Typography>
+            <Typography variant="h6" color="black">$5.00/month</Typography>
           </FloatingBox>
         </ImageContent>
       </SectionContainer>

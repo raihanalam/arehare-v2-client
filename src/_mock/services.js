@@ -4,19 +4,19 @@ import { sample } from 'lodash';
 // ----------------------------------------------------------------------
 
 const SERVICE_NAME = [
-  "Full-Stack Web Application Development",
+  
   "Odoo ERP Development Customization & Deployment",
-  "WordPress Theme & Plugin Development",
+  "Full-Stack Web Application Development",
   "Shopify E-commerce Store Setup & Maintenance",
+  "WordPress Theme & Plugin Development",
   "Cloud Solutions & DevOps Consulting",
+  "UI/UX Design and Prototyping",
   "API Development & Integration",
   "SaaS Application Development",
   "Mobile App Development (iOS/Android)",
   "Data Analysis & Business Intelligence",
   "Cybersecurity & Penetration Testing",
-  "AI & Machine Learning Solutions",
-  "Digital Product Design & Prototyping",
-  "UI/UX Design and Prototyping",
+  "AI & Machine Learning Solutions",,
   "Graphic Design & Branding Solutions",
   "Content Creation & Copywriting Services",
   "Video Editing & Animation Creation",
@@ -26,17 +26,42 @@ const SERVICE_NAME = [
   "Translation & Localization Services",
   "IT Consulting & Infrastructure Setup",
 ];
+const USER_NAME = [
+  'Raihan Alam',
+  'Tanvir Mahmud',
+  'Sumanta Majumder',
+  'Ashraful Islam',
+  'Mizanur Rahman',
+  'Mohammad Rasel',
+  'Rabbi Hossain',
+  'Kamal Khan',
+  'Mominul Islam',
+  'Noman Ahmed',
+  'Morshed Shanto',
+  'Merajul Islam',
+  'Rohan Ahmed',
+  'Nahid Islam',
+  'Tariqul Shagor',
+  'Rakib Hossain',
+  'Partho Roy',
+  'Farid Ahmed',
+  'Nazim Patwary',
+  'Ramim Sheikh',
+  'Nazmul Huda'
+
+]
 
 // ----------------------------------------------------------------------
 
-const services = [...Array(24)].map((_, index) => {
+const services = [...Array(20)].map((_, index) => {
   const setIndex = index + 1;
 
   return {
     id: faker.datatype.uuid(), // Using faker.datatype.uuid() for version <= 7
     cover: `/assets/images/services/service-${setIndex}.jpg`,
     images: [`/assets/images/services/service-${setIndex}.jpg`, `/assets/images/services/service-${setIndex+1}.jpg`, `/assets/images/services/service-${setIndex+2}.jpg`],
-    user: {name: faker.name.fullName(), avatar: `/assets/images/avatars/avatar_${index + 1}.jpg`,},
+    user: {name: USER_NAME[index],
+    avatar: `/assets/images/avatars/avatar_${index + 1}.jpg`,},
     rating: 5,
     ratingCount: 35,
     name: SERVICE_NAME[index],
