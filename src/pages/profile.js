@@ -43,7 +43,16 @@ const ProfilePage = () => {
                               <Typography variant="subtitle1" sx={{ fontWeight: 500 }}>Skills</Typography>
                               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, justifyContent: "center", mt: 1 }}>
                                    <Chip label="Software" />
-                                   <Chip label="Support" />
+                                   <Chip label="Python" />
+                                   <Chip label="Javascript" />
+                                   <Chip label="Django" />
+                                   <Chip label="React" />
+                                   <Chip label="Odoo" />
+                                   <Chip label="Frappe" />
+
+
+
+
                               </Box>
                               <Divider sx={{ my: 2 }} />
                               <Typography variant="subtitle1" sx={{ fontWeight: 500 }}>Insights</Typography>
@@ -105,10 +114,43 @@ const ProfilePage = () => {
                                                        </Typography>
                                                   </CardContent>
                                              </Card>
+                                             <Card sx={{ mt: 2 }}>
+                                                  <CardContent>
+                                                       <Typography variant="h6">Web Designer</Typography>
+                                                       <Typography variant="body2" color="textSecondary">
+                                                            October 2019 - Present
+                                                       </Typography>
+                                                       <Typography variant="body2" mt={1}>
+                                                            Working as a web designer focusing on UI/UX and front-end development.
+                                                       </Typography>
+                                                  </CardContent>
+                                             </Card>
                                               {/* Work Experience */}
                                               <Typography variant="h5" mt={3}>
                                                   Education Experience
                                              </Typography>
+                                             <Card sx={{ mt: 2 }}>
+                                                  <CardContent>
+                                                       <Typography variant="h6">Web Designer</Typography>
+                                                       <Typography variant="body2" color="textSecondary">
+                                                            October 2019 - Present
+                                                       </Typography>
+                                                       <Typography variant="body2" mt={1}>
+                                                            Working as a web designer focusing on UI/UX and front-end development.
+                                                       </Typography>
+                                                  </CardContent>
+                                             </Card>
+                                             <Card sx={{ mt: 2 }}>
+                                                  <CardContent>
+                                                       <Typography variant="h6">Web Designer</Typography>
+                                                       <Typography variant="body2" color="textSecondary">
+                                                            October 2019 - Present
+                                                       </Typography>
+                                                       <Typography variant="body2" mt={1}>
+                                                            Working as a web designer focusing on UI/UX and front-end development.
+                                                       </Typography>
+                                                  </CardContent>
+                                             </Card>
                                              <Card sx={{ mt: 2 }}>
                                                   <CardContent>
                                                        <Typography variant="h6">Web Designer</Typography>

@@ -28,6 +28,7 @@ const StyledSection = styled('div')(({ theme }) => ({
      display: 'flex',
      flexDirection: 'column',
      justifyContent: 'center',
+     alignItems: 'center',
      boxShadow: theme.customShadows.card,
      backgroundColor: theme.palette.background.default,
 }));
@@ -62,12 +63,12 @@ export default function LoginPage() {
                               <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
                                    Hi, Welcome Back
                               </Typography>
-                              <Box sx={{ position: "relative", width: "100%", height: { xs: 200, sm: 300, md: 400 } }}>
+                              <Box sx={{ position: "relative", width: "80%", height: { xs: 300, sm: 400, md: 500 } }}>
                                    <Image
                                         src="/assets/illustrations/High_five.png"
                                         alt="login"
                                         fill
-                                        style={{ objectFit: "cover" }} // Ensures the image covers the container properly
+                                        style={{ objectFit: "contain" }} // Ensures the image covers the container properly
                                    />
                               </Box>                         
                          </StyledSection>

@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 
 // @mui
 import { Link, Stack, IconButton, InputAdornment, TextField, Checkbox } from '@mui/material';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import { LoadingButton } from '@mui/lab';
 // components
 import Iconify from '../../../components/iconify';
@@ -58,7 +59,12 @@ export default function SignupForm() {
       </Stack>
 
       <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ my: 2 }}>
-        <Checkbox name="remember" label="Remember me" />
+      <FormControlLabel
+          value="end"
+          control={<Checkbox  name="remember"/>}
+          label="Remember Me"
+          labelPlacement="end"
+        />
         <Link variant="subtitle2" underline="hover">
           Forgot password?
         </Link>

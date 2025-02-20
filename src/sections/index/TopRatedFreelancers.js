@@ -21,7 +21,7 @@ const freelancers = [
   {
     id: 1,
     name: "Raihan Alam",
-    role: "ERP Developer",
+    role: "Software Engineer",
     rating: 4.9,
     price: "$500/month",
     tags: ["Odoo", "ERPNext", "Customization"],
@@ -129,13 +129,13 @@ const freelancers = [
   },
   {
     id: 10,
-    name: "Noman Ahmed",
+    name: "Sahariar Shafin",
     role: "Data Analyst",
     rating: 4.8,
     price: "$500/month",
     tags: ["Data Science", "Python", "Business Intelligence"],
     avatar: "/assets/images/avatars/avatar_10.jpg",
-    location: "Cox's Bazar, Bangladesh",
+    location: "Faridpur, Bangladesh",
     languages: "English, Bengali",
     intro: "Helping businesses make data-driven decisions."
   }
