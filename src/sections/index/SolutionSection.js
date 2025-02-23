@@ -27,7 +27,7 @@ import { motion } from "framer-motion";
 
 // Styled Card
 const StyledCard = styled(Card)(({ theme }) => ({
-  height: 160,
+  height:'160px',
   textAlign: "center",
   display: "flex",
   flexDirection: "column",
@@ -112,7 +112,7 @@ export default function ServiceCategories() {
 
         {/* Swiper Slider */}
         <Swiper
-          slidesPerView={6}
+          slidesPerView={2}
           spaceBetween={30}
           loop={true}
           autoplay={{
@@ -125,9 +125,9 @@ export default function ServiceCategories() {
           }}
           modules={[Navigation, Autoplay]} // Add Autoplay here
           breakpoints={{
-            1024: { slidesPerView: 4 },
-            768: { slidesPerView: 3 },
-            480: { slidesPerView: 2 },
+            1024: { slidesPerView: 6 },
+            768: { slidesPerView: 4 },
+            480: { slidesPerView: 3 },
           }}
           style={{ padding: "20px 0" }}
         >

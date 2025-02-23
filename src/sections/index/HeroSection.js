@@ -77,7 +77,8 @@ export default function HeroSection() {
               lineHeight: "1.1em",
             }}
           >
-            Hire The Best <br />
+            From Ideas to Execution
+            <br />
             <span
               style={{
                 color: "transparent",
@@ -86,7 +87,7 @@ export default function HeroSection() {
                 backgroundClip: "text",
               }}
             >
-              Freelance Talent
+              We Make It Happen
             </span>
           </Typography>
         </motion.div>
@@ -160,7 +161,7 @@ export default function HeroSection() {
             <Typography variant="body2" sx={{ marginTop: 2 }}>
               Popular Searches:{" "}
               <span style={{ fontWeight: "bold" }}>
-                Motion Graphics, Social Media Marketing
+                Web Development, Social Media Marketing
               </span>
             </Typography>
           </motion.div>

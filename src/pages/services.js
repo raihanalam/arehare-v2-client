@@ -2,10 +2,14 @@
 import { useState } from 'react';
 // @mui
 import { Container, Stack, Typography } from '@mui/material';
+import Navbar from '@/sections/index/NavSection';
+import Breadcrumbs from '@/sections/services/Breadcrumbs';
+
 // components
 import { ServiceSort, ServiceList, ServiceCartWidget, ServiceFilterSidebar } from '../sections/@dashboard/services';
 // mock
 import SERVICES from '../_mock/services';
+
 
 // ----------------------------------------------------------------------
 
@@ -23,10 +27,10 @@ export default function ServicesPage() {
   return (
     <>
 
-      <Container>
-        <Typography variant="h4" sx={{ mb: 5 }}>
-          Services
-        </Typography>
+      <Container  maxWidth="xl" sx={{ mt: 5, mb: 5 }}>
+        <Navbar />
+        {/* Breadcrumbs */}
+        <Breadcrumbs path={"Home > Services"} />
 
         <Stack direction="row" flexWrap="wrap-reverse" alignItems="center" justifyContent="flex-end" sx={{ mb: 5 }}>
           <Stack direction="row" spacing={1} flexShrink={0} sx={{ my: 1 }}>

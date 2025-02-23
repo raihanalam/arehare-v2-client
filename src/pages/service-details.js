@@ -37,7 +37,7 @@ import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 
 
 // Main Page
-const ServiceDetails = () => {
+const ServiceDetails = ({service}) => {
   const [selectedTab, setSelectedTab] = useState(0);
 
   const packages = [

@@ -51,7 +51,7 @@ const CardContent = styled(Box)({
 const portfolioCards = [
   {
     src: 'assets/images/services/service-11.jpg',
-    title: 'Creative Logo Design',
+    title: 'Shopify Ecommerce Store ',
     link: '/card-1',
   },
   {
@@ -85,7 +85,7 @@ const HoverCardComponent = () => {
   return (
     <Container maxWidth="xl">
       <Typography variant='h3' sx={{ mt: 10, mb: 5, textAlign: 'center' }}>
-        Some Works Of Our Freelancers
+        Some Works Of Our Experts
       </Typography>
       <CardContainer>
         {portfolioCards.map((card, index) => (

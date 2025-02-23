@@ -156,7 +156,7 @@ const TopRatedFreelancers = () => {
 
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
           <SectionHeaderLeft
-            title=" Top Rated Freelancers"
+            title="Top Talents"
             subtitle="Explore the best freelancers with top ratings."
           />
           <SectionHeaderRight text="Explore All Freelancers" />

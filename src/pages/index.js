@@ -19,7 +19,7 @@ export default function HomePage() {
      return (
           <>
                <Head>
-                    <title>AreHare Inc.</title>
+                    <title>AreHare - Top Talent Marketplce For Hire.</title>
                     <meta name="description" content="Leading Digital Solutions for Your Business" />
                     <link rel="icon" href="/favicon.ico" />
                </Head>
