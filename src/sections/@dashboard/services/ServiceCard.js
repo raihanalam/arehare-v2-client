@@ -9,6 +9,10 @@ import { fCurrency } from '../../../utils/formatNumber';
 import Label from '../../../components/label';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import Link from 'next/link';
+import { Favorite, Share, Star } from '@mui/icons-material';
+import StreetviewIcon from '@mui/icons-material/Streetview';
+import ReceiptIcon from '@mui/icons-material/Receipt';
+
 
 
 // Styled components
@@ -162,11 +166,18 @@ export default function ShopServiceCard({ service }) {
             <Typography variant="body2" sx={{ fontWeight: 600 }}>
               {service.user.name}
             </Typography>
-            <Stack direction="row">
-              <Rating value={service.rating} precision={0.5} readOnly size="small" />
+            <Stack direction="row" sx={{fontSize: '12px', color: 'gray'}}>
+              {/* <Rating value={service.rating} precision={0.5} readOnly size="small" />
               <Typography variant="body2" color="text.secondary">
                 ({service.ratingCount})
+              </Typography> */}
+              <Typography variant='body5' display="flex" alignItems="center" >
+                <Star sx={{ mr: '5px', color: '#fc8c03', fontSize: '20px' }} />
+                4.8 (50 ratings)
               </Typography>
+              
+              <Typography variant='body5' sx={{ml: '10px'}} display="flex" alignItems="center">
+                <ReceiptIcon sx={{ mr: '5px', color: 'green',  fontSize: '20px' }} />120 sales</Typography>
             </Stack>
           </Stack>
         </Stack>

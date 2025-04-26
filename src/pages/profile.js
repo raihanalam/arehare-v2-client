@@ -4,6 +4,7 @@ import { Facebook, LinkedIn, Instagram } from "@mui/icons-material";
 import Image from 'next/image';
 import Navbar from '@/sections/index/NavSection';
 import Breadcrumbs from '@/sections/services/Breadcrumbs';
+import { Favorite, Share, Star } from '@mui/icons-material';
 
 
 
@@ -29,6 +30,8 @@ const ProfilePage = () => {
                               />
                               <Typography variant="h6">Raihan Hridoy</Typography>
                               <Typography color="text.secondary">Product Manager</Typography>
+                              
+                              
                               <Typography variant="h6" sx={{ mt: 1 }}>$560/month</Typography>
                               <Box sx={{ mt: 2 }}>
                                    <Button variant="contained" fullWidth sx={{ mb: 1 }}>Send Message</Button>
@@ -40,6 +43,12 @@ const ProfilePage = () => {
                                    <Instagram fontSize="large" />
                               </Box>
                               <Divider sx={{ my: 2 }} />
+                              <Box display={'flex'} alignItems={'center'} justifyContent={'center'} mb={'10px'}>
+                                   <Star sx={{ mr: '5px', color: '#fc8c03', fontSize: '25px' }} />
+                                   <Typography variant="body5" sx={{color: 'gray'}} >
+                                        4.8 (50 ratings)
+                                   </Typography>
+                              </Box>
                               <Typography variant="subtitle1" sx={{ fontWeight: 500 }}>Skills</Typography>
                               <Box sx={{ display: "flex", flexWrap: "wrap", gap: 1, justifyContent: "center", mt: 1 }}>
                                    <Chip label="Software" />
@@ -79,7 +88,7 @@ const ProfilePage = () => {
                                                   audits, and compliance.
                                              </Typography>
                                              {/* Video Section */}
-                                             <Box sx={{ width: '100%', position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+                                             <Box sx={{ width: '100%', position: 'relative', paddingBottom: '56.25%', height: 0, mt:'10px' }}>
                                                   <iframe
                                                        src="https://www.youtube.com/embed/tgbNymZ7vqY"
                                                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}

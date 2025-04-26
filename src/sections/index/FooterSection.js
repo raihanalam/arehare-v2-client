@@ -12,7 +12,7 @@ const Footer = () => {
         mt: 5,
       }}
     >
-      <Container maxWidth="lg">
+      <Container maxWidth="xl">
         <Grid container spacing={4} justifyContent="space-between" alignItems="flex-start">
           {/* About Section */}
           <Grid item xs={12} sm={6} md={3}>
@@ -96,7 +96,7 @@ const Footer = () => {
         <Divider sx={{ backgroundColor: "#444", my: 4 }} />
         <Box sx={{ textAlign: "center" }}>
           <Typography variant="body2" sx={{ color: "#D1D1D1" }}>
-            © {new Date().getFullYear()} AreHare Inc. | All Rights Reserved.
+            © {new Date().getFullYear()} arehare.com | All Rights Reserved.
           </Typography>
         </Box>
       </Container>

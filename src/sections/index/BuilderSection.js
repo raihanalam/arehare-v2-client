@@ -4,7 +4,7 @@ import { styled } from '@mui/system';
 import Image from 'next/image';
 
 const SectionContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: '#004d40', // Dark Green background for aesthetic appeal
+  // backgroundColor: 'primary.main', // Dark Green background for aesthetic appeal
   padding: '40px 20px',
   borderRadius: '8px',
   color: 'white',
@@ -43,7 +43,7 @@ const FloatingBox = styled(Box)({
 });
 
 const CallToActionBtn = styled(Button)({
-  backgroundColor: '#ffab00',
+  backgroundColor: '#1de9b6',
   color: '#000',
   marginTop: '20px',
   '&:hover': {
@@ -55,7 +55,7 @@ const BuilderSection = () => {
   return (
     <Container maxWidth="xl" sx={{mt: 10}}>
 
-      <SectionContainer sx={{ padding: '60px' }}>
+      <SectionContainer sx={{ padding: '60px' ,           backgroundColor: 'primary.main',}}>
         {/* Text Section */}
         <TextContent>
           <Typography variant="h3" gutterBottom>
@@ -78,7 +78,7 @@ const BuilderSection = () => {
             <li>SEO & performance optimization</li>
             <li>Even Free Custom Domain</li>
           </ul>
-          <CallToActionBtn variant="contained">Coming Soon</CallToActionBtn>
+          <CallToActionBtn variant="contained">Coming Soon...</CallToActionBtn>
         </TextContent>
 
         {/* Image and Floating Box Section */}
