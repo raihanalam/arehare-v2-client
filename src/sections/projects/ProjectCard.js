@@ -67,7 +67,14 @@ const ProjectCard = ({ project }) => (
         <Typography
           variant="subtitle2"
           fontWeight="bold"
-          sx={{ mb: 1, mt:3, fontSize: { xs: '1rem', sm: '1rem' } }}
+          sx={{ mb: 1, mt:3, fontSize: { xs: '1rem', sm: '1rem' },  
+          lineHeight: '1.5', // Adjust to control spacing between lines
+          height: '3rem', // Ensures two lines of height
+          overflow: 'hidden', // Prevents extra content from showing
+          display: '-webkit-box', // Enables webkit box model for line control
+          WebkitBoxOrient: 'vertical',
+          WebkitLineClamp: 2,
+        }}
         >
           {project.title}
         </Typography>

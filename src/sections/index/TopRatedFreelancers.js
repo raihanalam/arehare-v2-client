@@ -246,7 +246,14 @@ const TopRatedFreelancers = () => {
                     </Stack>
                   </Box>
 
-                  <Typography variant="body2" sx={{ mt: 2, fontStyle: 'italic' }}>
+                  <Typography variant="body2" sx={{ mt: 2, fontStyle: 'italic',
+                    lineHeight: '1.5', // Adjust to control spacing between lines
+                    height: '3rem', // Ensures two lines of height
+                    overflow: 'hidden', // Prevents extra content from showing
+                    display: '-webkit-box', // Enables webkit box model for line control
+                    WebkitBoxOrient: 'vertical',
+                    WebkitLineClamp: 2,
+                   }}>
                     {freelancer.intro}
                   </Typography>
 

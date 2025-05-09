@@ -67,6 +67,7 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
 
      ...bgBlur({ color: theme.palette.background.default }),
      // boxShadow: 'none',
+     borderBottom: '1px solid #c2c2c2',
 
 }));
 

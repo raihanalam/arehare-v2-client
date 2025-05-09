@@ -63,7 +63,7 @@ export default function LoginPage() {
                               <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
                                    Hi, Welcome Back
                               </Typography>
-                              <Box sx={{ position: "relative", width: "80%", height: { xs: 300, sm: 400, md: 500 } }}>
+                              <Box sx={{ position: "relative", width: "80%", height: { xs: 200, sm: 300, md: 400 } }}>
                                    <Image
                                         src="/assets/illustrations/High_five.png"
                                         alt="login"

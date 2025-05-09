@@ -166,18 +166,18 @@ export default function ShopServiceCard({ service }) {
             <Typography variant="body2" sx={{ fontWeight: 600 }}>
               {service.user.name}
             </Typography>
-            <Stack direction="row" sx={{fontSize: '12px', color: 'gray'}}>
+            <Stack direction="row" sx={{fontSize: '12px', color: 'gray', mt:1}}>
               {/* <Rating value={service.rating} precision={0.5} readOnly size="small" />
               <Typography variant="body2" color="text.secondary">
                 ({service.ratingCount})
               </Typography> */}
               <Typography variant='body5' display="flex" alignItems="center" >
-                <Star sx={{ mr: '5px', color: '#fc8c03', fontSize: '20px' }} />
+                <Star sx={{ mr: '5px', color: '#fc8c03', fontSize: '15px' }} />
                 4.8 (50 ratings)
               </Typography>
               
               <Typography variant='body5' sx={{ml: '10px'}} display="flex" alignItems="center">
-                <ReceiptIcon sx={{ mr: '5px', color: 'green',  fontSize: '20px' }} />120 sales</Typography>
+                <ReceiptIcon sx={{ mr: '5px', color: 'green',  fontSize: '15px' }} />120 sales</Typography>
             </Stack>
           </Stack>
         </Stack>
